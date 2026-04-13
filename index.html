@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Discourse Feed — AI &amp; Labor</title>
+<style>
+  :root {
+    --bg: #0e0e0e;
+    --ink: #141414;
+    --muted: #7a7a7a;
+    --red: #c04848;
+    --yellow: #9a9a9a;
+    --green: #6a9b72;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--ink); }
+  body {
+    font: 14px/1.35 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 48px 0 80px;
+  }
+  .day-header {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 22px 16px 8px;
+    font-weight: 500;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 7px 16px;
+    min-height: 30px;
+    color: var(--ink);
+    text-decoration: none;
+    border: none;
+    transition: filter 0.1s ease;
+  }
+  .row:hover { filter: brightness(0.95); }
+  .row .time {
+    flex: 0 0 46px;
+    font-variant-numeric: tabular-nums;
+    font-size: 12px;
+    opacity: 0.72;
+  }
+  .row .source {
+    flex: 0 0 130px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.85;
+  }
+  .row .title {
+    flex: 1;
+    font-size: 13.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .red    { background: var(--red); }
+  .yellow { background: var(--yellow); }
+  .green  { background: var(--green); }
+  .archive {
+    padding: 36px 16px 24px;
+    border-top: 1px solid #232323;
+    margin-top: 32px;
+  }
+  .archive-label {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    font-weight: 500;
+  }
+  .stripe {
+    display: flex;
+    align-items: stretch;
+    height: 20px;
+    margin: 4px 0;
+    gap: 10px;
+  }
+  .stripe .date {
+    flex: 0 0 90px;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 20px;
+    font-variant-numeric: tabular-nums;
+  }
+  .stripe .date .total {
+    color: #c8c8c8;
+    margin-left: 6px;
+    font-weight: 600;
+  }
+  .stripe .bar {
+    flex: 1;
+    display: flex;
+    height: 20px;
+    background: #1a1a1a;
+  }
+  .stripe .seg {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: #f5f5f5;
+    font-variant-numeric: tabular-nums;
+    overflow: hidden;
+  }
+  .empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 40px;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+<main id="feed"></main>
+<script>
+const RECENT_DAYS = 7;
+
+fetch('articles.json')
+  .then(r => r.json())
+  .then(render)
+  .catch(err => {
+    document.getElementById('feed').innerHTML =
+      '<div class="empty">failed to load articles.json — ' + err.message + '</div>';
+  });
+
+function render(articles) {
+  const feed = document.getElementById('feed');
+
+  // group articles by local day key
+  const byDay = {};
+  for (const a of articles) {
+    const d = new Date(a.timestamp);
+    const key = dayKey(d);
+    (byDay[key] = byDay[key] || []).push(a);
+  }
+
+  // sort articles within each day descending by timestamp (newest first)
+  for (const key in byDay) {
+    byDay[key].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+  }
+
+  // all days, newest first
+  const days = Object.keys(byDay).sort().reverse();
+
+  const recent = days.slice(0, RECENT_DAYS);
+  const archive = days.slice(RECENT_DAYS);
+
+  for (const day of recent) {
+    feed.appendChild(dayHeader(day));
+    for (const a of byDay[day]) {
+      feed.appendChild(rowEl(a));
+    }
+  }
+
+  if (archive.length) {
+    const wrap = document.createElement('section');
+    wrap.className = 'archive';
+    const label = document.createElement('div');
+    label.className = 'archive-label';
+    label.textContent = 'Archive';
+    wrap.appendChild(label);
+    for (const day of archive) {
+      wrap.appendChild(archiveStripe(day, byDay[day]));
+    }
+    feed.appendChild(wrap);
+  }
+}
+
+function dayKey(date) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+}
+
+function dayHeader(key) {
+  const el = document.createElement('div');
+  el.className = 'day-header';
+  const d = new Date(key + 'T12:00:00');
+  el.textContent = d.toLocaleDateString('en-US', {
+    weekday: 'long', month: 'long', day: 'numeric'
+  });
+  return el;
+}
+
+function rowEl(a) {
+  const el = document.createElement('a');
+  el.className = `row ${a.color}`;
+  el.href = a.url;
+  el.target = '_blank';
+  el.rel = 'noopener noreferrer';
+
+  const t = new Date(a.timestamp);
+  const time = t.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+
+  const timeSpan = document.createElement('span');
+  timeSpan.className = 'time';
+  timeSpan.textContent = time;
+
+  const sourceSpan = document.createElement('span');
+  sourceSpan.className = 'source';
+  sourceSpan.textContent = a.source;
+
+  const titleSpan = document.createElement('span');
+  titleSpan.className = 'title';
+  titleSpan.textContent = a.title;
+
+  el.appendChild(timeSpan);
+  el.appendChild(sourceSpan);
+  el.appendChild(titleSpan);
+  return el;
+}
+
+function archiveStripe(key, arts) {
+  const row = document.createElement('div');
+  row.className = 'stripe';
+
+  const label = document.createElement('div');
+  label.className = 'date';
+  const d = new Date(key + 'T12:00:00');
+  label.textContent = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  const totalSpan = document.createElement('span');
+  totalSpan.className = 'total';
+  totalSpan.textContent = arts.length;
+  label.appendChild(totalSpan);
+
+  const bar = document.createElement('div');
+  bar.className = 'bar';
+
+  const counts = { red: 0, yellow: 0, green: 0 };
+  for (const a of arts) counts[a.color] = (counts[a.color] || 0) + 1;
+  const total = arts.length || 1;
+
+  for (const c of ['red', 'yellow', 'green']) {
+    if (!counts[c]) continue;
+    const seg = document.createElement('div');
+    seg.className = `seg ${c}`;
+    seg.style.flex = `0 0 ${(counts[c] / total) * 100}%`;
+    seg.textContent = counts[c];
+    bar.appendChild(seg);
+  }
+
+  row.appendChild(label);
+  row.appendChild(bar);
+  return row;
+}
+</script>
+</body>
+</html>
