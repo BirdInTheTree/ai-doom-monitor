@@ -49,8 +49,11 @@ Examples:
 - "Why AI Could Be the Best Thing for Your Professional Future" → green (explicit pro-worker framing)
 
 Article:
-Title: {title}
 Source: {source}
+Title: {title}
+Summary: {summary}
+
+Base your judgement primarily on the SUMMARY, not just the title. Authoritative newsrooms often write neutral-sounding headlines while the article body clearly amplifies one narrative — use the summary to see the framing.
 
 Respond with ONLY a single-line JSON object, no markdown, no commentary:
 {{"color": "red"|"yellow"|"green", "why": "one short sentence explaining which narrative the article amplifies"}}"""
@@ -102,21 +105,6 @@ def get_raw(path: str) -> bytes:
     req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req, timeout=120) as resp:
         return resp.read()
-
-
-def build_requests(articles):
-    reqs = []
-    for i, a in enumerate(articles):
-        user = PROMPT_TEMPLATE.format(title=a["title"], source=a["source"])
-        reqs.append({
-            "custom_id": f"art-{i}",
-            "params": {
-                "model": MODEL,
-                "max_tokens": 200,
-                "messages": [{"role": "user", "content": user}],
-            },
-        })
-    return reqs
 
 
 # Shadow-check: formal rules to flag likely LLM failures.
@@ -201,62 +189,63 @@ def parse_llm_output(text: str):
     return color, (why or "").strip()
 
 
+def classify_one(article: dict) -> tuple[str | None, str | None]:
+    """Direct Messages API call, returns (color, why) or (None, None) on failure."""
+    prompt = PROMPT_TEMPLATE.format(
+        title=article.get("title", ""),
+        source=article.get("source", ""),
+        summary=(article.get("summary", "") or "")[:500],
+    )
+    body = {
+        "model": MODEL,
+        "max_tokens": 200,
+        "messages": [{"role": "user", "content": prompt}],
+    }
+    try:
+        resp = api_request("POST", "/messages", body)
+    except Exception as e:
+        print(f"  ! classify failed: {e}")
+        return None, None
+    content = resp.get("content", [])
+    text = "".join(c.get("text", "") for c in content if c.get("type") == "text")
+    parsed = parse_llm_output(text)
+    if parsed is None:
+        return None, None
+    return parsed
+
+
 def main():
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
     load_env()
     articles = json.loads(ARTICLES.read_text())
     print(f"[+] loaded {len(articles)} articles")
 
-    # Preserve heuristic before overwriting
-    for a in articles:
-        if "heuristic_color" not in a:
-            a["heuristic_color"] = a["color"]
-            a["heuristic_why"] = a["why"]
+    t_start = time.time()
+    results: dict[int, tuple] = {}
 
-    reqs = build_requests(articles)
-    print(f"[+] submitting batch with {len(reqs)} requests")
-    batch = api_request("POST", "/messages/batches", {"requests": reqs})
-    batch_id = batch["id"]
-    print(f"[+] batch id: {batch_id}")
-
-    while True:
-        b = api_request("GET", f"/messages/batches/{batch_id}")
-        status = b.get("processing_status")
-        counts = b.get("request_counts", {})
-        print(f"[poll] status={status} counts={counts}")
-        if status == "ended":
-            break
-        time.sleep(POLL_SECONDS)
-
-    results_url = b.get("results_url")
-    if not results_url:
-        print("[!] no results_url on ended batch", file=sys.stderr)
-        sys.exit(1)
-    path = results_url.split(API_BASE, 1)[-1] if API_BASE in results_url else results_url
-    print(f"[+] fetching results from {path}")
-    raw = get_raw(path)
-
-    by_id = {}
-    for line in raw.decode().splitlines():
-        if not line.strip():
-            continue
-        rec = json.loads(line)
-        cid = rec.get("custom_id")
-        result = rec.get("result", {})
-        if result.get("type") != "succeeded":
-            by_id[cid] = None
-            continue
-        content = result.get("message", {}).get("content", [])
-        text = "".join(c.get("text", "") for c in content if c.get("type") == "text")
-        by_id[cid] = parse_llm_output(text)
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        futures = {ex.submit(classify_one, a): i for i, a in enumerate(articles)}
+        done = 0
+        for fut in as_completed(futures):
+            i = futures[fut]
+            try:
+                color, why = fut.result()
+            except Exception as e:
+                print(f"  ! worker {i} exception: {e}")
+                color, why = None, None
+            results[i] = (color, why)
+            done += 1
+            if done % 20 == 0:
+                print(f"  [{done}/{len(articles)}] classified")
 
     # Merge back
     for i, a in enumerate(articles):
-        parsed = by_id.get(f"art-{i}")
-        if parsed is None:
-            a["color"] = a["heuristic_color"]
-            a["why"] = a["heuristic_why"] + " [llm failed]"
+        color, why = results.get(i, (None, None))
+        if color is None:
+            a["color"] = "yellow"
+            a["why"] = "LLM failed — default to ambivalent"
         else:
-            color, why = parsed
             a["color"] = color
             a["why"] = why
         shadow = shadow_check(a["title"], a["source"], a["color"])
@@ -264,40 +253,33 @@ def main():
         a["shadow_note"] = shadow["note"]
 
     ARTICLES.write_text(json.dumps(articles, indent=2, ensure_ascii=False))
+    print(f"[+] wrote {ARTICLES} in {time.time()-t_start:.1f}s")
 
     # Stats
-    colors = {"red": 0, "yellow": 0, "green": 0}
-    heur = {"red": 0, "yellow": 0, "green": 0}
-    agree = 0
-    changes = {}
-    flags = {}
-    for a in articles:
-        colors[a["color"]] += 1
-        heur[a["heuristic_color"]] += 1
-        if a["color"] == a["heuristic_color"]:
-            agree += 1
-        else:
-            k = f"{a['heuristic_color']} → {a['color']}"
-            changes[k] = changes.get(k, 0) + 1
-        f = a["shadow_flag"]
-        flags[f] = flags.get(f, 0) + 1
+    from collections import Counter
+    colors = Counter(a["color"] for a in articles)
+    flags = Counter(a["shadow_flag"] for a in articles)
 
-    print(f"\n[+] LLM colors:       {colors}")
-    print(f"[+] Heuristic colors: {heur}")
-    print(f"[+] Agreement: {agree}/{len(articles)} ({100*agree/len(articles):.1f}%)")
-    print(f"[+] Disagreement patterns:")
-    for k, v in sorted(changes.items(), key=lambda x: -x[1]):
-        print(f"       {k}: {v}")
-    print(f"\n[+] Shadow verdict:")
-    for k, v in sorted(flags.items(), key=lambda x: -x[1]):
-        print(f"       {k}: {v}")
+    print(f"\n[+] Colors: {dict(colors)}")
+    print(f"[+] Shadow: {dict(flags)}")
+
+    print(f"\n[+] By Tier:")
+    for t in sorted({a["tier"] for a in articles}):
+        sub = [a for a in articles if a["tier"] == t]
+        c = Counter(a["color"] for a in sub)
+        print(f"    Tier {t} (n={len(sub):3d}): R{c['red']:3d} Y{c['yellow']:3d} G{c['green']:3d}")
+
+    print(f"\n[+] By Region:")
+    for r in sorted({a.get("region", "?") for a in articles}):
+        sub = [a for a in articles if a.get("region") == r]
+        c = Counter(a["color"] for a in sub)
+        print(f"    {r:10s} (n={len(sub):3d}): R{c['red']:3d} Y{c['yellow']:3d} G{c['green']:3d}")
 
     suspect = [a for a in articles if a["shadow_flag"] != "ok"]
     if suspect:
         print(f"\n[+] Review queue ({len(suspect)} items):")
-        for a in suspect[:30]:
-            print(f"   [{a['shadow_flag']}] LLM={a['color']:6} | [{a['source']}] {a['title'][:80]}")
-            print(f"       └ {a['shadow_note']}")
+        for a in suspect[:20]:
+            print(f"   [{a['shadow_flag']}] LLM={a['color']:6} | [{a['source']}] {a['title'][:70]}")
 
 
 if __name__ == "__main__":

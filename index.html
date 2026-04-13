@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Discourse Feed — AI &amp; Labor</title>
+<title>AI Doom Monitor — labor-market discourse</title>
 <style>
   :root {
     --bg: #0e0e0e;
@@ -19,10 +19,48 @@
     font: 14px/1.35 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
   }
+  .region-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(14, 14, 14, 0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid #1f1f1f;
+    padding: 10px 16px;
+  }
+  .region-bar-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .region-btn {
+    background: transparent;
+    border: 1px solid #2a2a2a;
+    color: #6a6a6a;
+    font: inherit;
+    font-size: 12px;
+    padding: 5px 11px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.12s ease;
+    letter-spacing: 0.02em;
+  }
+  .region-btn:hover {
+    border-color: #444;
+    color: #b0b0b0;
+  }
+  .region-btn.active {
+    background: #1a1a1a;
+    border-color: #555;
+    color: #e8e8e8;
+  }
   main {
     max-width: 880px;
     margin: 0 auto;
-    padding: 48px 0 80px;
+    padding: 28px 0 80px;
   }
   .day-header {
     color: var(--muted);
@@ -127,20 +165,58 @@
 </style>
 </head>
 <body>
+<nav class="region-bar">
+  <div class="region-bar-inner" id="region-bar">
+    <button class="region-btn active" data-region="US">🇺🇸 US</button>
+    <button class="region-btn active" data-region="UK">🇬🇧 UK</button>
+    <button class="region-btn active" data-region="EU">🇪🇺 EU</button>
+    <button class="region-btn active" data-region="Asia">🌏 Asia</button>
+    <button class="region-btn active" data-region="Global">🌐 Global</button>
+  </div>
+</nav>
 <main id="feed"></main>
 <script>
 const RECENT_DAYS = 7;
+const activeRegions = new Set(['US', 'UK', 'EU', 'Asia', 'Global']);
+let allArticles = [];
 
 fetch('articles.json')
   .then(r => r.json())
-  .then(render)
+  .then(articles => { allArticles = articles; render(); })
   .catch(err => {
     document.getElementById('feed').innerHTML =
       '<div class="empty">failed to load articles.json — ' + err.message + '</div>';
   });
 
-function render(articles) {
+document.getElementById('region-bar').addEventListener('click', e => {
+  const btn = e.target.closest('.region-btn');
+  if (!btn) return;
+  const r = btn.dataset.region;
+  if (activeRegions.has(r)) {
+    if (activeRegions.size === 1) return;
+    activeRegions.delete(r);
+    btn.classList.remove('active');
+  } else {
+    activeRegions.add(r);
+    btn.classList.add('active');
+  }
+  render();
+});
+
+function matchesRegion(a) {
+  if (!a.region) return true;
+  return activeRegions.has(a.region);
+}
+
+function render() {
   const feed = document.getElementById('feed');
+  feed.innerHTML = '';
+  const articles = allArticles.filter(matchesRegion);
+
+  if (articles.length === 0) {
+    feed.innerHTML = '<div class="empty">no articles match selected regions</div>';
+    return;
+  }
 
   // group articles by local day key
   const byDay = {};

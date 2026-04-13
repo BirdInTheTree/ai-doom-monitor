@@ -1,0 +1,633 @@
+# AI Doom Monitor — master source configuration
+# See ../ai-doom-monitor-plan.md for rationale per tier
+# Generated from inventory steps 01-03.
+
+meta:
+  version: 1
+  updated: 2026-04-13
+
+# -----------------------------------------------------------------------------
+# FILTER STRATEGIES
+# -----------------------------------------------------------------------------
+# strict       — require BOTH ai_signal AND labor_signal in title (or one in
+#                title + other in summary). Default for broad newsrooms.
+# broad        — require only ai_signal OR only labor_signal. Use for sources
+#                that are pre-specialized in one axis (AI-focused labs, or
+#                labor-focused HR-trade).
+# accept_all   — no filter. Use for curated on-topic newsletters where every
+#                post is already in scope.
+#
+# KIND
+# rss          — direct feed via url field
+# gnews_site   — routed via Google News `site:` query (use when direct RSS
+#                is blocked / deactivated / Cloudflare-protected)
+
+# -----------------------------------------------------------------------------
+# TIER 1  — top-authority newsrooms and research outlets (~31 sources)
+# -----------------------------------------------------------------------------
+sources:
+  # ---- Tier 1 direct RSS (25) ----
+
+  - name: Financial Times — Technology
+    tier: 1
+    kind: rss
+    url: https://www.ft.com/technology?format=rss
+    lang: en
+    region: UK
+    filter: strict
+    notes: paywall, RSS gives title + abstract
+
+  - name: Wall Street Journal — Tech
+    tier: 1
+    kind: rss
+    url: https://feeds.a.dj.com/rss/RSSWSJD.xml
+    lang: en
+    region: US
+    filter: strict
+    notes: paywall
+
+  - name: New York Times — Technology
+    tier: 1
+    kind: rss
+    url: https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml
+    lang: en
+    region: US
+    filter: strict
+
+  - name: New York Times — Business
+    tier: 1
+    kind: rss
+    url: https://rss.nytimes.com/services/xml/rss/nyt/Business.xml
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Bloomberg — Technology
+    tier: 1
+    kind: rss
+    url: https://feeds.bloomberg.com/technology/news.rss
+    lang: en
+    region: Global
+    filter: strict
+    notes: paywall
+
+  - name: Bloomberg — Markets
+    tier: 1
+    kind: rss
+    url: https://feeds.bloomberg.com/markets/news.rss
+    lang: en
+    region: Global
+    filter: strict
+    notes: paywall
+
+  - name: The Atlantic
+    tier: 1
+    kind: rss
+    url: https://www.theatlantic.com/feed/all/
+    lang: en
+    region: US
+    filter: strict
+
+  - name: The Economist — Business
+    tier: 1
+    kind: rss
+    url: https://www.economist.com/business/rss.xml
+    lang: en
+    region: UK
+    filter: strict
+    notes: paywall
+
+  - name: The Economist — Finance
+    tier: 1
+    kind: rss
+    url: https://www.economist.com/finance-and-economics/rss.xml
+    lang: en
+    region: UK
+    filter: strict
+    notes: paywall
+
+  - name: Washington Post — Technology
+    tier: 1
+    kind: rss
+    url: https://feeds.washingtonpost.com/rss/business/technology
+    lang: en
+    region: US
+    filter: strict
+
+  - name: The Guardian — Technology
+    tier: 1
+    kind: rss
+    url: https://www.theguardian.com/technology/rss
+    lang: en
+    region: UK
+    filter: strict
+
+  - name: The Guardian — Business
+    tier: 1
+    kind: rss
+    url: https://www.theguardian.com/business/rss
+    lang: en
+    region: UK
+    filter: strict
+
+  - name: MIT Technology Review
+    tier: 1
+    kind: rss
+    url: https://www.technologyreview.com/feed/
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Wired
+    tier: 1
+    kind: rss
+    url: https://www.wired.com/feed/rss
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Wired — Business
+    tier: 1
+    kind: rss
+    url: https://www.wired.com/feed/category/business/latest/rss
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Ars Technica
+    tier: 1
+    kind: rss
+    url: https://feeds.arstechnica.com/arstechnica/index/
+    lang: en
+    region: US
+    filter: strict
+
+  - name: The Information
+    tier: 1
+    kind: rss
+    url: https://www.theinformation.com/feed
+    lang: en
+    region: US
+    filter: strict
+    notes: subscription, abstracts available
+
+  - name: Axios
+    tier: 1
+    kind: rss
+    url: https://api.axios.com/feed/
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Fortune
+    tier: 1
+    kind: rss
+    url: https://fortune.com/feed/
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Forbes — Innovation
+    tier: 1
+    kind: rss
+    url: https://www.forbes.com/innovation/feed/
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Fast Company — Technology
+    tier: 1
+    kind: rss
+    url: https://www.fastcompany.com/technology/rss
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Business Insider
+    tier: 1
+    kind: rss
+    url: https://www.businessinsider.com/rss
+    lang: en
+    region: US
+    filter: strict
+
+  - name: HBS Working Knowledge
+    tier: 1
+    kind: rss
+    url: https://hbswk.hbs.edu/rss/hbswk.xml
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Knowledge at Wharton
+    tier: 1
+    kind: rss
+    url: https://knowledge.wharton.upenn.edu/feed/
+    lang: en
+    region: US
+    filter: strict
+
+  - name: McKinsey Insights
+    tier: 1
+    kind: rss
+    url: https://www.mckinsey.com/insights/rss
+    lang: en
+    region: Global
+    filter: strict
+
+  # ---- Tier 1 via Google News site: (6) ----
+
+  - name: Harvard Business Review
+    tier: 1
+    kind: gnews_site
+    site: hbr.org
+    lang: en
+    region: US
+    filter: strict
+    notes: no open RSS, routed via GN
+
+  - name: Reuters
+    tier: 1
+    kind: gnews_site
+    site: reuters.com
+    lang: en
+    region: Global
+    filter: strict
+    notes: RSS deactivated
+
+  - name: CNBC
+    tier: 1
+    kind: gnews_site
+    site: cnbc.com
+    lang: en
+    region: US
+    filter: strict
+    notes: RSS deactivated
+
+  - name: Stanford GSB Insights
+    tier: 1
+    kind: gnews_site
+    site: gsb.stanford.edu
+    lang: en
+    region: US
+    filter: strict
+    notes: low volume
+
+  - name: BCG
+    tier: 1
+    kind: gnews_site
+    site: bcg.com
+    lang: en
+    region: Global
+    filter: strict
+    notes: Akamai bot-block
+
+  - name: Deloitte Insights
+    tier: 1
+    kind: gnews_site
+    site: www2.deloitte.com
+    lang: en
+    region: Global
+    filter: strict
+    notes: RSS deactivated
+
+  # -----------------------------------------------------------------------------
+  # TIER 2  — think-tanks, central banks, research orgs, HR-trade (~17 sources)
+  # -----------------------------------------------------------------------------
+
+  # ---- Tier 2 direct RSS (3) ----
+
+  - name: OpenAI — Blog
+    tier: 2
+    kind: rss
+    url: https://openai.com/blog/rss.xml
+    lang: en
+    region: Global
+    filter: strict
+    notes: AI-focused; accept on AI signal alone
+
+  - name: HR Dive
+    tier: 2
+    kind: rss
+    url: https://www.hrdive.com/feeds/news/
+    lang: en
+    region: US
+    filter: strict
+    notes: labor-focused; require AI signal only
+
+  - name: HR Executive
+    tier: 2
+    kind: rss
+    url: https://hrexecutive.com/feed/
+    lang: en
+    region: US
+    filter: strict
+    notes: labor-focused; require AI signal only
+
+  # ---- Tier 2 via Google News site: (14) ----
+
+  - name: Anthropic
+    tier: 2
+    kind: gnews_site
+    site: anthropic.com
+    lang: en
+    region: Global
+    filter: strict
+
+  - name: World Economic Forum
+    tier: 2
+    kind: gnews_site
+    site: weforum.org
+    lang: en
+    region: Global
+    filter: strict
+
+  - name: International Monetary Fund
+    tier: 2
+    kind: gnews_site
+    site: imf.org
+    lang: en
+    region: Global
+    filter: strict
+
+  - name: Brookings Institution
+    tier: 2
+    kind: gnews_site
+    site: brookings.edu
+    lang: en
+    region: US
+    filter: strict
+
+  - name: PIIE
+    tier: 2
+    kind: gnews_site
+    site: piie.com
+    lang: en
+    region: US
+    filter: strict
+
+  - name: New York Fed
+    tier: 2
+    kind: gnews_site
+    site: newyorkfed.org
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Dallas Fed
+    tier: 2
+    kind: gnews_site
+    site: dallasfed.org
+    lang: en
+    region: US
+    filter: strict
+
+  - name: SF Fed
+    tier: 2
+    kind: gnews_site
+    site: frbsf.org
+    lang: en
+    region: US
+    filter: strict
+
+  - name: NBER
+    tier: 2
+    kind: gnews_site
+    site: nber.org
+    lang: en
+    region: US
+    filter: strict
+
+  - name: ILO
+    tier: 2
+    kind: gnews_site
+    site: ilo.org
+    lang: en
+    region: Global
+    filter: strict
+
+  - name: OECD
+    tier: 2
+    kind: gnews_site
+    site: oecd.org
+    lang: en
+    region: Global
+    filter: strict
+
+  - name: SHRM
+    tier: 2
+    kind: gnews_site
+    site: shrm.org
+    lang: en
+    region: US
+    filter: strict
+    notes: labor-focused
+
+  - name: HR Brew
+    tier: 2
+    kind: gnews_site
+    site: hr-brew.com
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Yale Budget Lab
+    tier: 2
+    kind: gnews_site
+    site: budgetlab.yale.edu
+    lang: en
+    region: US
+    filter: strict
+
+  # -----------------------------------------------------------------------------
+  # TIER 3  — curated newsletter / substack voices on AI × labor (~18 sources)
+  # -----------------------------------------------------------------------------
+
+  - name: Ethan Mollick — One Useful Thing
+    tier: 3
+    kind: rss
+    url: https://www.oneusefulthing.org/feed
+    lang: en
+    region: US
+    filter: accept_all
+    notes: augmentation lead voice
+
+  - name: Derek Thompson
+    tier: 3
+    kind: rss
+    url: https://www.derekthompson.org/feed
+    lang: en
+    region: US
+    filter: accept_all
+    notes: Atlantic columnist; frequent AI+labor
+
+  - name: Ben Thompson — Stratechery
+    tier: 3
+    kind: rss
+    url: https://stratechery.com/feed/
+    lang: en
+    region: US
+    filter: strict
+    notes: paywall, broad tech focus
+
+  - name: Casey Newton — Platformer
+    tier: 3
+    kind: rss
+    url: https://www.platformer.news/feed
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Azeem Azhar — Exponential View
+    tier: 3
+    kind: rss
+    url: https://www.exponentialview.co/feed
+    lang: en
+    region: UK
+    filter: accept_all
+    notes: AI+labor+macro; all posts in scope
+
+  - name: Noah Smith — Noahpinion
+    tier: 3
+    kind: rss
+    url: https://www.noahpinion.blog/feed
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Tyler Cowen — Marginal Revolution
+    tier: 3
+    kind: rss
+    url: https://marginalrevolution.com/feed
+    lang: en
+    region: US
+    filter: strict
+    notes: broad; strict filter essential
+
+  - name: Gergely Orosz — Pragmatic Engineer
+    tier: 3
+    kind: rss
+    url: https://newsletter.pragmaticengineer.com/feed
+    lang: en
+    region: Europe
+    filter: strict
+    notes: engineering labor market focus
+
+  - name: AI Supremacy
+    tier: 3
+    kind: rss
+    url: https://www.ai-supremacy.com/feed
+    lang: en
+    region: US
+    filter: accept_all
+    notes: AI macro analysis; all on-topic
+
+  - name: Jack Clark — Import AI
+    tier: 3
+    kind: rss
+    url: https://jack-clark.net/feed/
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Dwarkesh Patel
+    tier: 3
+    kind: rss
+    url: https://www.dwarkesh.com/feed
+    lang: en
+    region: US
+    filter: strict
+    notes: AI interview podcast
+
+  - name: Lenny Rachitsky — Lenny's Newsletter
+    tier: 3
+    kind: rss
+    url: https://www.lennysnewsletter.com/feed
+    lang: en
+    region: US
+    filter: strict
+    notes: product/career focus
+
+  - name: Latent Space
+    tier: 3
+    kind: rss
+    url: https://www.latent.space/feed
+    lang: en
+    region: US
+    filter: strict
+    notes: technical AI; labor angle rare
+
+  - name: Nathan Lambert — Interconnects
+    tier: 3
+    kind: rss
+    url: https://www.interconnects.ai/feed
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Last Week in AI
+    tier: 3
+    kind: rss
+    url: https://lastweekin.ai/feed
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Matt Yglesias — Slow Boring
+    tier: 3
+    kind: rss
+    url: https://www.slowboring.com/feed
+    lang: en
+    region: US
+    filter: strict
+
+  - name: Paul Krugman
+    tier: 3
+    kind: rss
+    url: https://paulkrugman.substack.com/feed
+    lang: en
+    region: US
+    filter: strict
+    notes: macro-economist
+
+# -----------------------------------------------------------------------------
+# BLACKLIST — publisher strings / domains auto-rejected regardless of match
+# -----------------------------------------------------------------------------
+# Used by the fetcher when ingesting via Google News backup (sources that slip
+# through keyword matches but never produce valuable signal for AI+labor
+# discourse).
+
+blacklist_sources:
+  # Crypto / financial aggregators
+  - bitget
+  - mexc
+  - tradingview
+  - seeking alpha
+  - stock titan
+  - investing.com
+
+  # PR / vendor-news wires
+  - pr newswire
+  - globenewswire
+  - business wire
+  - newswire
+  - prweb
+  - marketwatch press releases
+  - benzinga
+  - pulse 2.0
+
+  # Content farms / SEO / listicles
+  - aimultiple
+  - ai multiple
+  - autogpt.net
+  - vocal.media
+  - let's data science
+  - bw people
+  - startup fortune
+
+  # Out-of-scope sectors
+  - gamereactor
+  - sports illustrated
+  - rolling out
+  - hypehair
+  - the cool down
