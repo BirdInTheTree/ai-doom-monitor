@@ -16,7 +16,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article discusses CEO-level concerns about AI lab resource constraints and strategic implications for leadership"
+    "roles_why": "Article discusses AI lab leadership and strategic decisions about resource allocation at the executive level"
   },
   {
     "id": "2026-04-06-ai-supremacy-spacex-s-ai-endgame-owning-the-infrastructure-layer-of-intel",
@@ -35,7 +35,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article focuses on Elon Musk's strategic vision and business decisions regarding SpaceX and Tesla mergers"
+    "roles_why": "Article focuses on Elon Musk and SpaceX's strategic vision and leadership decisions at the top executive level"
   },
   {
     "id": "2026-04-06-axios-behind-the-curtain-sam-s-superintelligence-new-deal",
@@ -54,7 +54,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Sam Altman as OpenAI CEO is the primary subject discussing his policy blueprint for AI superintelligence regulation and wealth redistribution"
+    "roles_why": "Sam Altman as CEO articulating OpenAI's vision on AI's societal impact, taxation, and regulation at the executive leadership level"
   },
   {
     "id": "2026-04-06-openai-blog-announcing-the-openai-safety-fellowship",
@@ -71,9 +71,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "entry_level"
+      "CAIO"
     ],
-    "roles_why": "Fellowship program targets early-career researchers and develops next generation of talent"
+    "roles_why": "Article centers on AI safety and alignment governance, core responsibility of Chief AI Officer role"
   },
   {
     "id": "2026-04-06-cnbc-jpmorgan-ceo-jamie-dimon-in-annual-letter-cites-risks-in-geo",
@@ -92,7 +92,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article centers on Jamie Dimon's CEO perspective and commentary on risks including AI"
+    "roles_why": "Article centers on CEO Jamie Dimon's annual letter addressing strategic risks including AI at the firm level"
   },
   {
     "id": "2026-04-06-azeem-azhar-exponential-view-data-to-start-your-week-the-ai-capacity-trap",
@@ -109,9 +109,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "general_workforce"
+      "CAIO"
     ],
-    "roles_why": "Article discusses broad labor market impacts of AI accessibility and usability challenges affecting workers generally, not specific job roles"
+    "roles_why": "Article discusses AI adoption challenges and capacity constraints, central to AI strategy and governance leadership"
   },
   {
     "id": "2026-04-06-national-bureau-of-economic-re-nber-working-paper-series-artificial-intelligence-productivi",
@@ -130,7 +130,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Paper studies AI's impact on productivity and workforce through analysis of corporate executives' experiences and perspectives."
+    "roles_why": "Article studies AI's impact on productivity and workforce through the lens of corporate executives' perspectives and decision-making"
   },
   {
     "id": "2026-04-06-cnbc-cnbc-s-the-china-connection-newsletter-why-ai-isn-t-replacin",
@@ -147,9 +147,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "general_workforce"
+      "non_csuite"
     ],
-    "roles_why": "Article discusses broad labor market impact of AI on jobs in China across the workforce rather than specific job roles"
+    "roles_why": "article discusses macro labor statistics and workforce trends in China, not a specific C-suite role"
   },
   {
     "id": "2026-04-06-casey-newton-platformer-openai-is-getting-weird-again",
@@ -168,7 +168,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article focuses on OpenAI executive leadership changes and Altman's role ahead of IPO"
+    "roles_why": "Article discusses OpenAI leadership changes and executive reshuffling under CEO Altman ahead of IPO"
   },
   {
     "id": "2026-04-07-derek-thompson-why-cost-disease-is-the-secret-force-behind-america-s-toxic-",
@@ -185,7 +185,7 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [],
-    "roles_why": "Article discusses cost disease and social isolation trends, not specific job roles or labor market displacement"
+    "roles_why": "Article discusses macroeconomic trends and social isolation, not C-suite labor strategy or AI adoption"
   },
   {
     "id": "2026-04-07-harvard-business-review-decision-making-by-consensus-doesn-t-work-in-the-ai-era",
@@ -202,10 +202,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CEO",
-      "middle_manager"
+      "CEO"
     ],
-    "roles_why": "Article discusses how AI is changing decision-making structures, primarily affecting executives and managers who need to adapt from consensus-based to faster individual decision-making models"
+    "roles_why": "Article discusses decision-making authority and leadership structure at the top executive level in response to AI disruption"
   },
   {
     "id": "2026-04-07-international-labour-organizat-ai-in-manufacturing-challenges-and-opportunities-for-promoti",
@@ -222,9 +221,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "general_workforce"
+      "non_csuite"
     ],
-    "roles_why": "Article discusses AI's impact on manufacturing workers and decent work broadly, not specific job roles"
+    "roles_why": "Article discusses broad manufacturing workforce impacts, decent work standards, and labor transition—macro-level labor policy rather than a specific C-suite role's function."
   },
   {
     "id": "2026-04-07-knowledge-at-wharton-from-strategy-to-shelf-how-p-g-is-deploying-ai",
@@ -241,9 +240,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CTO_CIO"
+      "CAIO"
     ],
-    "roles_why": "Article discusses P&G's AI deployment strategy and technology implementation led by technology leadership."
+    "roles_why": "Article centers on P&G's AI deployment strategy and governance across the organization, which is Chief AI Officer domain"
   },
   {
     "id": "2026-04-07-hr-brew-overwhelmed-by-applications-recruiters-turn-to-ai-pre-screen",
@@ -260,9 +259,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "entry_level"
+      "CHRO"
     ],
-    "roles_why": "Article focuses on how AI pre-screening tools are affecting job applicants and candidates trying to enter the workforce"
+    "roles_why": "Article discusses HR and recruitment function adoption of AI tools to manage talent pipeline and hiring workflows"
   },
   {
     "id": "2026-04-07-hr-brew-ai-governance-really-matters-amid-evolving-compliance-landsc",
@@ -279,9 +278,10 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CEO"
+      "CAIO",
+      "chief_compliance"
     ],
-    "roles_why": "AI governance and compliance landscape are executive-level strategic concerns under CEO purview"
+    "roles_why": "Article centrally discusses AI governance and compliance landscape, which fall under Chief AI Officer strategy and Chief Compliance Officer regulatory oversight"
   },
   {
     "id": "2026-04-07-cnbc-elon-musk-seeks-ouster-of-openai-ceo-sam-altman-as-part-of-l",
@@ -300,7 +300,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article centers on Elon Musk's lawsuit seeking to remove OpenAI CEO Sam Altman from his position"
+    "roles_why": "Article centers on Sam Altman's role as OpenAI CEO and a lawsuit seeking his removal from that position."
   },
   {
     "id": "2026-04-07-cnbc-google-ceo-sundar-pichai-says-ai-shift-opens-opportunities-t",
@@ -319,7 +319,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article features Google CEO Sundar Pichai's strategic commentary on AI opportunities and investment decisions"
+    "roles_why": "Article centers on CEO Sundar Pichai's strategic vision and investment decisions regarding AI shift and startup opportunities"
   },
   {
     "id": "2026-04-07-federal-reserve-bank-of-san-fr-ai-and-coder-employment-compiling-the-evidence",
@@ -336,9 +336,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "engineer_ic"
+      "non_csuite"
     ],
-    "roles_why": "Article examines how AI impacts software engineers and coders specifically"
+    "roles_why": "Article focuses on coder employment and labor market impacts, not C-suite leadership or decision-making"
   },
   {
     "id": "2026-04-08-ai-supremacy-mythos-bigai-datacenters-and-bottlenecks",
@@ -354,8 +354,10 @@
     "why": "Article focuses on IPO hype and technical infrastructure (datacenters, bottlenecks) rather than making explicit claims about worker displacement, job creation, or worker benefit",
     "shadow_flag": "ok",
     "shadow_note": "",
-    "roles": [],
-    "roles_why": "Article focuses on datacenter infrastructure and IPO hype, not on any specific job role or labor market impact"
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article discusses AI's macro impact on jobs and datacenter strategy, concerns central to CEO-level business direction and IPO decisions"
   },
   {
     "id": "2026-04-08-azeem-azhar-exponential-view-where-we-re-taking-exponential-view-next",
@@ -371,8 +373,10 @@
     "why": "Article is about editorial staffing for a newsletter/research studio and contains no narrative claim about AI's impact on labor markets or workers.",
     "shadow_flag": "ok",
     "shadow_note": "",
-    "roles": [],
-    "roles_why": "Article is about editorial/publishing decisions for a newsletter, not about AI's impact on any job role"
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article discusses leadership decision-making about organizational direction and editorial strategy for a research studio"
   },
   {
     "id": "2026-04-08-derek-thompson-the-substack-ification-of-american-religion",
@@ -389,7 +393,7 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [],
-    "roles_why": "Article discusses religion, media, and politics trends with no focus on specific job roles or labor market impacts"
+    "roles_why": "Article discusses religious and media trends among general populations, not C-suite leadership or specific executive functions"
   },
   {
     "id": "2026-04-08-harvard-business-review-managers-and-executives-disagree-on-ai-and-it-s-costing-comp",
@@ -406,10 +410,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CEO",
-      "middle_manager"
+      "CEO"
     ],
-    "roles_why": "Article centrally examines disagreement between executives and managers on AI strategy and its business impact"
+    "roles_why": "Article examines disagreement between executives and managers on AI strategy at the top leadership level, with CEO as primary decision-maker role affected"
   },
   {
     "id": "2026-04-08-harvard-business-review-what-ai-can-t-do-the-new-job-of-leadership",
@@ -428,7 +431,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article examines how AI is reshaping the core responsibilities and job of leadership/CEOs"
+    "roles_why": "Article discusses leadership's evolving role and responsibilities in the AI era, centering on top-leader strategy and organizational direction."
   },
   {
     "id": "2026-04-08-federal-reserve-bank-of-new-yo-new-york-fed-to-release-research-on-generative-ai-in-the-wor",
@@ -445,9 +448,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "general_workforce"
+      "CHRO"
     ],
-    "roles_why": "Article discusses broad workplace impacts of generative AI across employees generally, not specific job roles"
+    "roles_why": "Article about generative AI's impact on workplace and workforce, which is the primary domain of HR leadership"
   },
   {
     "id": "2026-04-08-hr-brew-ai-literacy-is-popular-at-the-dol",
@@ -464,9 +467,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "general_workforce"
+      "CHRO"
     ],
-    "roles_why": "Article discusses AI literacy initiatives at the Department of Labor affecting workers broadly across skill levels"
+    "roles_why": "Article discusses AI literacy training and workforce development, which is a human resources function under the CHRO's purview"
   },
   {
     "id": "2026-04-08-boston-consulting-group-how-bcg-uses-responsible-ai-in-hiring",
@@ -483,9 +486,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "entry_level"
+      "CHRO"
     ],
-    "roles_why": "Article focuses on how AI hiring practices affect job candidates and new entrants to the workforce at BCG"
+    "roles_why": "Article centrally discusses AI's application in hiring and talent acquisition, which is the primary function of the Chief Human Resources Officer."
   },
   {
     "id": "2026-04-08-cnbc-openai-will-allocate-ipo-shares-to-retail-investors-as-it-pr",
@@ -504,7 +507,7 @@
     "roles": [
       "CFO"
     ],
-    "roles_why": "The article centers on OpenAI's CFO making statements about IPO share allocation plans"
+    "roles_why": "CFO is the primary subject, discussing IPO preparation and share allocation strategy"
   },
   {
     "id": "2026-04-08-hr-brew-will-employing-ai-instead-of-humans-really-help-companies-bo",
@@ -521,9 +524,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CEO"
+      "CHRO"
     ],
-    "roles_why": "Article discusses AI's impact on company profitability and bottom lines, which is a CEO-level business decision and outcome"
+    "roles_why": "Article examines AI adoption's impact on hiring decisions and workforce economics, core CHRO responsibility"
   },
   {
     "id": "2026-04-08-cnbc-crowdstrike-ceo-ai-finding-vulnerabilities-will-cause-high-n",
@@ -542,7 +545,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "The article features the CrowdStrike CEO providing commentary on AI and cybersecurity trends"
+    "roles_why": "CEO of CrowdStrike making strategic statements about AI's impact on cybersecurity threats to the company and industry"
   },
   {
     "id": "2026-04-09-reuters-bendigo-and-adelaide-bank-flags-job-cuts-in-ai-push-posts-q3",
@@ -559,9 +562,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "general_workforce"
+      "CHRO"
     ],
-    "roles_why": "Article discusses job cuts affecting bank employees broadly as the institution adopts AI technology"
+    "roles_why": "Article centrally discusses job cuts and workforce reduction decisions driven by AI adoption, which is a primary CHRO responsibility"
   },
   {
     "id": "2026-04-09-harvard-business-review-hiring-your-first-chief-ai-officer-h0385h",
@@ -578,9 +581,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CTO_CIO"
+      "CAIO"
     ],
-    "roles_why": "Article focuses on hiring and role definition for chief AI officer, a technology leadership position"
+    "roles_why": "Article centrally discusses hiring and role of Chief AI Officer"
   },
   {
     "id": "2026-04-09-axios-gen-z-s-fading-ai-hype",
@@ -596,10 +599,8 @@
     "why": "Article reports mixed/ambivalent sentiment data (less excited, more angry) without amplifying either displacement doom or worker-benefit claims, fitting the paradox/skeptic frame of unclear positioning.",
     "shadow_flag": "ok",
     "shadow_note": "",
-    "roles": [
-      "entry_level"
-    ],
-    "roles_why": "Article focuses on Gen Z's changing sentiment toward AI as they enter the workforce and early careers"
+    "roles": [],
+    "roles_why": "Article discusses Gen Z sentiment toward AI broadly and workforce attitudes, not a specific C-suite role's leadership or function"
   },
   {
     "id": "2026-04-09-ben-thompson-stratechery-an-interview-with-new-york-times-ceo-meredith-kopit-levien-a",
@@ -618,7 +619,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article is an interview with the New York Times CEO discussing her strategy and views on AI and human expertise"
+    "roles_why": "Article is an interview with the CEO discussing her strategic vision on human expertise and competitive positioning against AI and aggregators."
   },
   {
     "id": "2026-04-09-derek-thompson-how-zombie-flow-took-over-culture",
@@ -635,7 +636,7 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [],
-    "roles_why": "Article about cultural trends and happiness; no discussion of specific job roles or AI labor market impact"
+    "roles_why": "Article discusses culture and happiness trends, not C-suite labor market impacts or executive roles"
   },
   {
     "id": "2026-04-09-knowledge-at-wharton-google-s-vice-president-of-ai-and-marketing-strategy-joshua-",
@@ -654,7 +655,7 @@
     "roles": [
       "CMO"
     ],
-    "roles_why": "Article focuses on a marketing executive's perspective on AI's impact on marketing strategy and creativity"
+    "roles_why": "Article centers on Google's marketing executive discussing AI's impact on marketing strategy, creativity, and customer value"
   },
   {
     "id": "2026-04-09-knowledge-at-wharton-people-led-tech-powered-walmart-s-ai-job-shift",
@@ -671,9 +672,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CEO"
+      "CHRO"
     ],
-    "roles_why": "Chief people officer (C-suite executive) discussing AI implementation strategy across the organization"
+    "roles_why": "Chief People Officer (equivalent to CHRO) is the primary subject discussing AI's impact on Walmart's workforce and talent strategy"
   },
   {
     "id": "2026-04-09-hr-brew-why-your-talent-system-isn-t-keeping-pace-with-ai-and-how-to",
@@ -690,9 +691,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "middle_manager"
+      "CHRO"
     ],
-    "roles_why": "Article discusses how managers and talent systems need to adapt to AI, addressing HR leadership's operational challenges"
+    "roles_why": "Article discusses talent systems, hiring, and HR function adaptation to AI disruption, centered on HR leadership perspective"
   },
   {
     "id": "2026-04-09-shrm-rethinking-workforce-strategy-in-the-age-of-ai-with-reena-gu",
@@ -709,9 +710,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CEO"
+      "CHRO"
     ],
-    "roles_why": "Article discusses workforce strategy decision-making at the executive level with focus on C-suite leadership perspective on AI impact"
+    "roles_why": "Article centers on workforce strategy and talent management decisions in response to AI, which is the CHRO's core domain."
   },
   {
     "id": "2026-04-09-hr-brew-why-the-ai-performance-divide-is-widening-and-what-to-do-abo",
@@ -728,9 +729,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "general_workforce"
+      "CHRO"
     ],
-    "roles_why": "Article discusses how AI is creating performance divides among workers broadly, not specific executive or role-based cohorts"
+    "roles_why": "Article discusses AI's impact on workforce performance management and talent strategy, which are core CHRO responsibilities"
   },
   {
     "id": "2026-04-09-stanford-graduate-school-of-bu-ai-will-test-governments-on-jobs-training-and-public-trust",
@@ -747,9 +748,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "general_workforce"
+      "non_csuite"
     ],
-    "roles_why": "Article discusses AI's broad impact on jobs, training, and workers across the economy rather than specific role categories"
+    "roles_why": "Article focuses on government policy, public workforce impacts, and training—not a specific C-suite executive role"
   },
   {
     "id": "2026-04-10-openai-blog-applications-of-ai-at-openai",
@@ -766,7 +767,7 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [],
-    "roles_why": "Article describes AI product applications broadly without focusing on any specific job role as primary subject"
+    "roles_why": "Article is a product overview and use-case exploration, not focused on any specific C-suite role's function or decision-making."
   },
   {
     "id": "2026-04-10-openai-blog-using-projects-in-chatgpt",
@@ -783,7 +784,7 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [],
-    "roles_why": "Article is a product feature tutorial with no focus on any specific job role or labor market impact"
+    "roles_why": "Article is a product feature tutorial for ChatGPT users; no C-suite role is a primary subject"
   },
   {
     "id": "2026-04-10-openai-blog-chatgpt-for-managers",
@@ -800,9 +801,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "middle_manager"
+      "CHRO"
     ],
-    "roles_why": "Article focuses on how managers use ChatGPT to improve their management practices and team effectiveness"
+    "roles_why": "Article focuses on manager effectiveness, team feedback, and talent management—core HR functions"
   },
   {
     "id": "2026-04-10-openai-blog-working-with-files-in-chatgpt",
@@ -819,7 +820,7 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [],
-    "roles_why": "Article is a product feature tutorial with no discussion of any job roles or labor market impacts"
+    "roles_why": "Article is a product feature tutorial for end-users; does not discuss any C-suite role or labor market impact"
   },
   {
     "id": "2026-04-10-axios-what-ai-ceos-still-don-t-get-about-washington",
@@ -838,7 +839,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article focuses on AI CEOs' policy pitches and their disconnect with Washington's actual tech governance practices"
+    "roles_why": "Article focuses on AI CEOs (Altman, Amodei) and their role in shaping AI governance and policy at the executive level."
   },
   {
     "id": "2026-04-10-ai-supremacy-the-biggest-ai-as-a-service-company-in-history",
@@ -855,7 +856,7 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [],
-    "roles_why": "Article is a directory/curated list of links about Claude AI and Anthropic products, not focused on any specific job role"
+    "roles_why": "Article is a directory/roundup of links about Claude AI and Anthropic with no focus on a specific C-suite role or labor market impact"
   },
   {
     "id": "2026-04-10-azeem-azhar-exponential-view-mythos-and-the-mispricing-of-everything",
@@ -871,8 +872,10 @@
     "why": "The summary suggests a paradox/skeptical frame by emphasizing the inseparability of AI capability and danger rather than making explicit claims about worker displacement or augmentation.",
     "shadow_flag": "ok",
     "shadow_note": "",
-    "roles": [],
-    "roles_why": "Article discusses AI capabilities and dangers as abstract concepts, not specific job roles or labor market impacts"
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article discusses AI's fundamental impact on business strategy and risk, core CEO-level concerns about capability-danger tradeoffs"
   },
   {
     "id": "2026-04-10-the-information-openai-stargate-leaders-depart-in-latest-shakeup-to-data-cen",
@@ -889,9 +892,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CTO_CIO"
+      "COO"
     ],
-    "roles_why": "Article focuses on senior technology executives and their departures from OpenAI's data center initiative"
+    "roles_why": "Article focuses on senior executives leading data center operations and infrastructure strategy, which is operational/execution leadership"
   },
   {
     "id": "2026-04-10-wired-suspect-arrested-for-allegedly-throwing-molotov-cocktail-at-",
@@ -910,7 +913,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article focuses on Sam Altman as OpenAI's CEO being the target of an attack at his home"
+    "roles_why": "Article centers on Sam Altman in his capacity as OpenAI's chief executive officer and the security incident targeting him personally."
   },
   {
     "id": "2026-04-10-shrm-stay-neutral-with-ai-drafted-workplace-allegations",
@@ -927,9 +930,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "middle_manager"
+      "CHRO"
     ],
-    "roles_why": "Article addresses managers handling AI-drafted workplace allegations and maintaining neutrality in their HR processes"
+    "roles_why": "Article discusses HR's role in managing AI-drafted workplace allegations and maintaining neutrality in employee disputes"
   },
   {
     "id": "2026-04-10-hr-executive-upskill-reskill-and-retain-how-to-future-proof-your-workforc",
@@ -946,9 +949,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "general_workforce"
+      "CHRO"
     ],
-    "roles_why": "Article discusses broad workforce upskilling and reskilling strategies in response to AI automation affecting workers generally"
+    "roles_why": "Article focuses on workforce talent management, upskilling, reskilling, and retention—core CHRO responsibilities"
   },
   {
     "id": "2026-04-10-new-york-times-technology-molotov-cocktail-is-hurled-at-home-of-sam-altman-openai-s-ce",
@@ -967,7 +970,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Sam Altman is the primary subject of the article in his capacity as OpenAI's CEO"
+    "roles_why": "Article centers on Sam Altman in his role as OpenAI's CEO, covering a security incident at his residence."
   },
   {
     "id": "2026-04-11-new-york-times-business-banks-are-warned-about-anthropic-s-new-powerful-a-i-technolo",
@@ -984,9 +987,10 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CEO"
+      "CEO",
+      "CISO"
     ],
-    "roles_why": "Bank executives are the primary subject being warned by government officials about AI cyberthreats"
+    "roles_why": "Bank CEOs are primary audience for Treasury/Fed warning; CISO role is central to cybersecurity threats from AI"
   },
   {
     "id": "2026-04-11-the-information-the-tokenmaxxing-tide-may-already-be-turning",
@@ -1003,9 +1007,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "general_workforce"
+      "CHRO"
     ],
-    "roles_why": "Article discusses employees at tech companies adopting AI usage practices without focusing on any specific executive or specialized role"
+    "roles_why": "Article discusses employee behavior, workplace culture, and adoption of AI tools—core talent and HR management concerns"
   },
   {
     "id": "2026-04-12-azeem-azhar-exponential-view-exponential-view-569-when-the-future-is-uncertain-what-do-yo",
@@ -1022,9 +1026,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "entry_level"
+      "non_csuite"
     ],
-    "roles_why": "Article discusses what to teach in light of AI, directly addressing education and career preparation for new entrants to the workforce."
+    "roles_why": "article discusses education and teaching in the context of AI, not C-suite executive roles or functions"
   },
   {
     "id": "2026-04-12-the-guardian-technology-is-ai-the-greatest-art-heist-in-history",
@@ -1041,9 +1045,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CEO"
+      "CMO"
     ],
-    "roles_why": "Article discusses AI company CEOs as primary subjects making public statements about AI's labor market impact"
+    "roles_why": "Article centers on AI's impact on creative workers (artists, illustrators) in the art world, which organizationally maps to CMO function"
   },
   {
     "id": "2026-04-12-lenny-rachitsky-lenny-s-newsle-hard-truths-about-building-in-the-ai-era-keith-rabois-khosla",
@@ -1060,10 +1064,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CEO",
-      "engineer_ic"
+      "CEO"
     ],
-    "roles_why": "Article discusses hiring frameworks and product strategy decisions relevant to executive leadership and how AI impacts product management and engineering roles"
+    "roles_why": "Article discusses top-leader strategy on hiring frameworks and organizational priorities in the AI era, with emphasis on executive decision-making"
   },
   {
     "id": "2026-04-12-tyler-cowen-marginal-revolutio-sunday-assorted-links",
@@ -1080,7 +1083,7 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [],
-    "roles_why": "Article is a link roundup touching on various AI topics but not centering on any specific job role as primary subject"
+    "roles_why": "Article is a curated link roundup touching on macro topics (recessions, AI writing quality, legal AI use) without focusing on any specific C-suite role's decision-making or function"
   },
   {
     "id": "2026-04-13-financial-times-technology-the-less-technically-literate-might-be-a-touch-concerned-tha",
@@ -1099,7 +1102,7 @@
     "roles": [
       "CMO"
     ],
-    "roles_why": "Article focuses on critical communications strategy work, a marketing/communications leadership function"
+    "roles_why": "Critical communications strategist role centers on brand messaging and organizational communication strategy, which falls under marketing leadership"
   },
   {
     "id": "2026-04-13-financial-times-technology-meta-builds-ai-version-of-mark-zuckerberg-to-interact-with-s",
@@ -1118,7 +1121,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Mark Zuckerberg as CEO is the primary subject being trained as an AI character for staff interaction"
+    "roles_why": "Article centers on CEO Mark Zuckerberg's leadership of Meta's AI strategy and personal involvement in developing AI systems"
   },
   {
     "id": "2026-04-13-bloomberg-technology-why-you-should-wait-out-ai-s-super-spending-false-start",
@@ -1137,7 +1140,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article features CEO Janusz Marecki as the primary subject discussing AI hype and LLM limitations from an industry insider perspective"
+    "roles_why": "CEO discusses AI strategy, hype cycles, and fundamental business implications of LLM limitations"
   },
   {
     "id": "2026-04-13-axios-the-ai-revolution-is-sorting-people-into-three-camps",
@@ -1153,10 +1156,8 @@
     "why": "Article frames AI adoption as creating fragmented perspectives and uncertainty ('three camps', 'disconnect', doubters vs. power users) rather than claiming clear worker displacement or worker benefit",
     "shadow_flag": "ok",
     "shadow_note": "",
-    "roles": [
-      "general_workforce"
-    ],
-    "roles_why": "Article discusses broad societal divisions around AI adoption among workers and people generally, not specific job roles"
+    "roles": [],
+    "roles_why": "Article discusses general workforce sentiment and societal divisions around AI, not a specific C-suite executive role"
   },
   {
     "id": "2026-04-13-fast-company-technology-anthropic-s-office-is-surprisingly-ai-first-even-for-an-ai-c",
@@ -1173,9 +1174,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "general_workforce"
+      "CAIO"
     ],
-    "roles_why": "Article discusses how Anthropic employees broadly are reorganizing work around AI tools like Claude, not any specific executive or role-based subset"
+    "roles_why": "Article discusses AI adoption and organizational strategy centered on Claude integration, which is core AI governance and adoption leadership"
   },
   {
     "id": "2026-04-13-bloomberg-technology-full-interview-roubini-on-iran-war-oil-shock-ai-boom",
@@ -1194,7 +1195,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Nouriel Roubini is interviewed in his capacity as CEO of Roubini Macro Associates discussing economic and geopolitical topics."
+    "roles_why": "Roubini is quoted as CEO discussing macroeconomic outlook and AI boom impact on growth"
   },
   {
     "id": "2026-04-13-hr-executive-hr-investment-in-ai-is-booming-but-most-companies-aren-t-see",
@@ -1211,9 +1212,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CFO"
+      "CHRO"
     ],
-    "roles_why": "Article discusses HR investment decisions and ROI measurement, which are CFO-level financial and strategic concerns"
+    "roles_why": "Article focuses on HR's AI investment decisions and evaluation strategies, which is the CHRO's domain"
   },
   {
     "id": "2026-04-13-hr-executive-ibm-chro-focus-on-ai-productivity-at-your-own-risk",
@@ -1230,9 +1231,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CEO"
+      "CHRO"
     ],
-    "roles_why": "CHRO is discussing AI strategy and enterprise growth implications for C-suite decision-making and organizational leadership"
+    "roles_why": "IBM's CHRO is the primary subject discussing AI strategy and enterprise talent implications"
   },
   {
     "id": "2026-04-13-mit-technology-review-want-to-understand-the-current-state-of-ai-check-out-these-c",
@@ -1249,7 +1250,7 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [],
-    "roles_why": "Article is a high-level overview of AI trends and statistics; no specific job role is a primary subject"
+    "roles_why": "Article is a general overview of AI trends and Stanford's AI Index report; no specific C-suite role is the primary subject"
   },
   {
     "id": "2026-04-13-hr-brew-ai-readiness-gap-is-slowing-productivity-gains",
@@ -1266,9 +1267,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "general_workforce"
+      "CHRO"
     ],
-    "roles_why": "Article discusses AI readiness gaps affecting broad employee productivity rather than specific executive or role-based impacts"
+    "roles_why": "Article discusses HR's role in closing the AI readiness gap to unlock productivity gains, a core talent and workforce strategy function."
   },
   {
     "id": "2026-04-13-the-economist-finance-the-tech-jobs-bust-is-real-don-t-blame-ai-yet",
@@ -1285,9 +1286,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "general_workforce"
+      "CHRO"
     ],
-    "roles_why": "Article focuses on technology firms shedding workers broadly, not a specific executive or role type"
+    "roles_why": "Article centrally discusses tech firm layoff decisions and workforce reduction strategies, which are CHRO talent management functions."
   },
   {
     "id": "2026-04-13-fast-company-technology-the-latest-gallup-poll-reveals-these-3-findings-on-ai-in-the",
@@ -1303,10 +1304,8 @@
     "why": "Article presents mixed signals on AI adoption (increased use but widespread skepticism and job-replacement concerns) without resolving toward either doom or worker benefit, epitomizing the paradox/ambivalence frame.",
     "shadow_flag": "ok",
     "shadow_note": "",
-    "roles": [
-      "general_workforce"
-    ],
-    "roles_why": "Article focuses on broad employee experiences and attitudes toward AI adoption across the American workforce"
+    "roles": [],
+    "roles_why": "Article discusses general workforce AI adoption and worker sentiment; no specific C-suite role is the primary subject"
   },
   {
     "id": "2026-04-13-ars-technica-meta-spins-up-ai-version-of-mark-zuckerberg-to-engage-with-e",
@@ -1325,7 +1324,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Mark Zuckerberg as CEO is the primary subject, with the article focused on his personal involvement in training an AI version of himself"
+    "roles_why": "Mark Zuckerberg as CEO is personally involved in AI development and employee engagement strategy, making this a top-leader story about CEO-level AI initiatives."
   },
   {
     "id": "2026-04-13-the-information-openai-memo-cites-staggering-demand-for-joint-aws-product-sa",
@@ -1344,7 +1343,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article discusses OpenAI executive memo about business strategy and cloud partnerships, which is CEO/executive leadership strategy context"
+    "roles_why": "Article discusses OpenAI executive leadership's strategic business decisions regarding cloud partnerships and enterprise positioning"
   },
   {
     "id": "2026-04-13-hr-dive-ai-is-stress-testing-hiring-and-hurting-trust",
@@ -1361,9 +1360,9 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "general_workforce"
+      "CHRO"
     ],
-    "roles_why": "Article discusses how AI is affecting the hiring system and worker trust broadly, not specific executive or role-based impacts"
+    "roles_why": "Article focuses on AI's impact on hiring systems and talent acquisition processes, which are core CHRO responsibilities"
   },
   {
     "id": "2026-04-13-the-guardian-technology-meta-creating-ai-version-of-mark-zuckerberg-so-staff-can-tal",
@@ -1382,7 +1381,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article centers on Mark Zuckerberg as CEO and the creation of an AI version of him for employee interaction"
+    "roles_why": "Article centrally discusses Mark Zuckerberg in his role as Meta's chief executive and the creation of an AI clone of him for employee engagement."
   },
   {
     "id": "2026-04-13-hr-dive-ai-industry-recruiting-platform-faces-multiple-lawsuits-over",
@@ -1398,8 +1397,10 @@
     "why": "Article reports on a data breach lawsuit against an AI recruiting platform—a legal/compliance incident with no narrative claim about worker displacement, job creation, or AI's labor market impact.",
     "shadow_flag": "ok",
     "shadow_note": "",
-    "roles": [],
-    "roles_why": "Article focuses on a data breach lawsuit against a recruiting platform; no specific job roles are primary subjects of discussion"
+    "roles": [
+      "CLO"
+    ],
+    "roles_why": "Article centers on legal liability and lawsuits stemming from a data breach, which is a chief legal officer's primary responsibility"
   },
   {
     "id": "2026-04-13-azeem-azhar-exponential-view-data-to-start-your-week-the-jet-fuel-inflection-point",
@@ -1416,7 +1417,7 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [],
-    "roles_why": "Article about geopolitical conflict and policy is not centrally about any specific job role"
+    "roles_why": "Article discusses geopolitical conflict and policy implications, not a specific C-suite role or labor market impact"
   },
   {
     "id": "2026-04-13-business-insider-goldman-is-working-with-anthropic-on-ai-cyber-risks-after-ne",
@@ -1433,9 +1434,10 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CEO"
+      "CEO",
+      "CISO"
     ],
-    "roles_why": "Goldman Sachs CEO David Solomon is the primary subject meeting with officials about AI cyber risks"
+    "roles_why": "CEO David Solomon leads Goldman's response to AI cybersecurity risks; CISO would own threat defense and security strategy against advanced AI models"
   },
   {
     "id": "2026-04-13-the-guardian-business-goldman-sachs-chief-hyper-aware-of-risks-from-anthropic-s-my",
@@ -1454,7 +1456,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "David Solomon's statements as Goldman Sachs CEO about AI risks and strategy are the primary subject"
+    "roles_why": "CEO David Solomon is the primary subject discussing AI risks and strategic response at the executive level"
   },
   {
     "id": "2026-04-13-bloomberg-technology-anthropic-hires-trump-linked-lobbying-firm-ballard-partners",
@@ -1470,8 +1472,10 @@
     "why": "Article reports corporate/political maneuvering (lobbying firm hire) with no narrative claim about worker displacement, job creation, or labor market impact.",
     "shadow_flag": "ok",
     "shadow_note": "",
-    "roles": [],
-    "roles_why": "Article focuses on corporate lobbying strategy, not labor market impacts on specific job roles"
+    "roles": [
+      "CLO"
+    ],
+    "roles_why": "Article centers on legal/regulatory strategy through lobbying firm engagement in Pentagon dispute"
   },
   {
     "id": "2026-04-13-fortune-after-growing-up-on-a-dairy-farm-this-peter-thiel-backed-fou",
@@ -1490,7 +1494,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article profiles Halter CEO Craig Piggott and his leadership of an AI company in agriculture"
+    "roles_why": "Article focuses on CEO Craig Piggott's leadership of an AI company disrupting agriculture"
   },
   {
     "id": "2026-04-13-business-insider-linkedin-is-quietly-moving-into-the-ai-training-business",
@@ -1528,7 +1532,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Article centers on CEO Kristin Peck's comments about AI's impact on her business"
+    "roles_why": "Kristin Peck, Zoetis CEO, is the primary subject discussing the CEO role's perspective on AI's impact on the business"
   },
   {
     "id": "2026-04-13-the-information-altman-addresses-home-attack",
@@ -1547,7 +1551,7 @@
     "roles": [
       "CEO"
     ],
-    "roles_why": "Sam Altman as OpenAI CEO is the primary subject addressing public criticism of the AI industry"
+    "roles_why": "Sam Altman's personal statement as OpenAI's CEO addressing public controversy and industry criticism"
   },
   {
     "id": "2026-04-13-the-information-openai-stargate-execs-to-join-meta-s-new-compute-unit",
@@ -1564,9 +1568,10 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CTO_CIO"
+      "COO",
+      "CTO"
     ],
-    "roles_why": "Article focuses on senior technology executives joining Meta to lead AI infrastructure initiatives"
+    "roles_why": "Article centers on executives leading cloud infrastructure and data center operations at both companies"
   },
   {
     "id": "2026-04-13-the-information-exclusive-openai-data-center-leaders-depart",
@@ -1583,8 +1588,8 @@
     "shadow_flag": "ok",
     "shadow_note": "",
     "roles": [
-      "CTO_CIO"
+      "COO"
     ],
-    "roles_why": "Article discusses departure of senior technology executives leading OpenAI's data center infrastructure initiative"
+    "roles_why": "Article focuses on data center operations leadership and infrastructure execution, core COO responsibilities"
   }
 ]

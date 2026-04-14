@@ -252,15 +252,29 @@
 <main id="feed"></main>
 <script>
 const RECENT_DAYS = 7;
+// C-suite pantheon ordering (see csuite-pantheon.md). Empty rows hide
+// automatically — we show only what the corpus actually covers.
 const ROLES_ORDER = [
-  ['CEO',              'CEO'],
-  ['CFO',              'CFO'],
-  ['CTO_CIO',          'CTO / CIO'],
-  ['CMO',              'CMO'],
-  ['middle_manager',   'middle mgr'],
-  ['entry_level',      'entry-level'],
-  ['engineer_ic',      'engineer / IC'],
-  ['general_workforce','general'],
+  // Wave 1 — olympians
+  ['CEO',                  'CEO'],
+  ['CFO',                  'CFO'],
+  ['COO',                  'COO'],
+  ['CTO',                  'CTO'],
+  ['CIO',                  'CIO'],
+  ['CMO',                  'CMO'],
+  ['CLO',                  'CLO'],
+  // Wave 2
+  ['CHRO',                 'CHRO'],
+  ['CISO',                 'CISO'],
+  ['chief_data',           'Chief Data'],
+  ['chief_commercial',     'Chief Commercial'],
+  ['chief_compliance',     'Chief Compliance'],
+  // Wave 3
+  ['CAIO',                 'CAIO'],
+  ['chief_diversity',      'Chief Diversity'],
+  ['chief_sustainability', 'Chief Sustainability'],
+  // Catch-all
+  ['non_csuite',           'non-C-suite'],
 ];
 const activeRegions = new Set(['US', 'UK', 'EU', 'Asia', 'Global']);
 let allArticles = [];
@@ -421,9 +435,17 @@ function renderHeatmap(articles) {
     }
   }
 
-  // Max cell value for color scaling
+  // Hide rows with 0 articles across the whole window (unless selected)
+  const visibleRoles = ROLES_ORDER.filter(([role]) => {
+    const total = days.reduce((s, d) => s + counts[role][d], 0);
+    if (total > 0) return true;
+    return roleFilter && roleFilter.role === role;
+  });
+  if (visibleRoles.length === 0) return;
+
+  // Max cell value for color scaling (over visible roles only)
   let maxCount = 0;
-  for (const [role] of ROLES_ORDER) {
+  for (const [role] of visibleRoles) {
     for (const d of days) {
       if (counts[role][d] > maxCount) maxCount = counts[role][d];
     }
@@ -468,8 +490,8 @@ function renderHeatmap(articles) {
     grid.appendChild(lab);
   }
 
-  // Role rows
-  for (const [roleKey, roleDisplay] of ROLES_ORDER) {
+  // Role rows (only visible roles — empty ones auto-hidden)
+  for (const [roleKey, roleDisplay] of visibleRoles) {
     const label = document.createElement('div');
     label.className = 'hm-label-row';
     label.textContent = roleDisplay;

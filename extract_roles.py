@@ -30,26 +30,49 @@ ARTICLES = SCRIPT_DIR / "articles.json"
 MODEL = "claude-haiku-4-5-20251001"
 
 ROLES = {
-    "CEO", "CFO", "CTO_CIO", "CMO",
-    "middle_manager", "entry_level", "engineer_ic", "general_workforce",
+    # Wave 1 — olympians
+    "CEO", "CFO", "COO", "CTO", "CIO", "CMO", "CLO",
+    # Wave 2 — ~2000-2015
+    "CHRO", "CISO", "chief_data", "chief_commercial", "chief_compliance",
+    # Wave 3 — ~2020-2026
+    "CAIO", "chief_diversity", "chief_sustainability",
+    # Catch-all for articles not about a specific C-suite role
+    "non_csuite",
 }
 
-PROMPT = """You are tagging a news article about AI and labor markets with which job roles it centrally discusses.
+PROMPT = """You are tagging a news article about AI and labor markets with which C-suite role it centrally discusses.
 
-Closed set of roles (use these exact tokens):
-- "CEO" — chief executive officer as the subject (Dimon, Altman CEO comments, "CEO job at risk")
-- "CFO" — chief financial officer, finance function
-- "CTO_CIO" — chief technology officer, chief information officer, technology leadership
-- "CMO" — chief marketing officer, marketing function
-- "middle_manager" — middle management, "bosses", "managers" without executive context, span-of-control stories
-- "entry_level" — new graduates, entry-level white-collar, Gen Z starting careers, early-career workers
-- "engineer_ic" — software engineers, developers, individual contributors in tech
-- "general_workforce" — "workers", "employees", "white-collar workers" without specific role, broad labor stats
+This taxonomy matches the user's research corpus on executive roles (C-suite pantheon). Use EXACT tokens.
+
+Wave 1 (olympians):
+- "CEO" — chief executive officer; top-leader stories, Altman/Dimon/Huang quotes about the CEO role itself
+- "CFO" — chief financial officer, finance function; CFO-led AI, finance-team workflows
+- "COO" — chief operating officer; operations, supply chain, day-to-day execution
+- "CTO" — chief technology officer; R&D, product-tech leadership
+- "CIO" — chief information officer; enterprise IT, systems, internal platforms
+- "CMO" — chief marketing officer; brand, creative, content, advertising. **Creative workers (illustrators, designers, copywriters, video editors, artists, brand-content producers) map to CMO** — they organizationally sit under marketing.
+- "CLO" — chief legal officer / general counsel; legal function, regulation of AI in-house
+
+Wave 2 (~2000-2015):
+- "CHRO" — chief human resources officer; talent, hiring, HR-tech, layoff decisions
+- "CISO" — chief information security officer; cybersecurity, AI-threat defense
+- "chief_data" — Chief Data Officer; data platforms, analytics function
+- "chief_commercial" — Chief Commercial Officer (CCO); sales, growth, revenue
+- "chief_compliance" — Chief Compliance Officer; regulatory, audit
+
+Wave 3 (~2020-2026):
+- "CAIO" — Chief AI Officer; AI adoption leadership, AI strategy, AI governance
+- "chief_diversity" — Chief Diversity Officer; DEI, representation
+- "chief_sustainability" — Chief Sustainability Officer; ESG, climate in AI (data-center carbon footprints)
+
+Catch-all:
+- "non_csuite" — article isn't about a specific C-suite role; covers general workforce, middle managers, entry-level, engineers / IC workers, specific professions (teachers, nurses, truck drivers, etc.), or macro-labor statistics
 
 Rules:
 - Return ONLY roles that are the PRIMARY SUBJECT of the article, not every role mentioned in passing.
-- If the article is about AI affecting "workers" broadly, use "general_workforce".
-- If no role from the closed set fits, return empty array [].
+- If the article is about "workers" broadly, middle managers, Gen Z graduates, software engineers, or any non-executive group, use "non_csuite".
+- If the article is about creative labor being disrupted by AI (artists, illustrators, designers), use "CMO".
+- If no role fits, return empty array [].
 - Usually 1-2 roles per article. Rarely 3.
 
 Article:
