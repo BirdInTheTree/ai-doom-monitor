@@ -19,22 +19,36 @@
     font: 14px/1.35 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
   }
-  .region-bar {
+  .app {
+    display: flex;
+    align-items: flex-start;
+  }
+  .rail {
     position: sticky;
     top: 0;
-    z-index: 10;
-    background: rgba(14, 14, 14, 0.92);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border-bottom: 1px solid #1f1f1f;
-    padding: 10px 16px;
+    width: 220px;
+    height: 100vh;
+    flex: 0 0 220px;
+    padding: 24px 16px 16px;
+    border-right: 1px solid #1f1f1f;
+    overflow-y: auto;
   }
-  .region-bar-inner {
-    max-width: 880px;
-    margin: 0 auto;
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+  .rail-group {
+    margin-bottom: 22px;
+  }
+  .rail-group h3 {
+    color: #5a5a5a;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .rail .region-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 4px;
   }
   .region-btn {
     background: transparent;
@@ -48,19 +62,72 @@
     transition: all 0.12s ease;
     letter-spacing: 0.02em;
   }
-  .region-btn:hover {
-    border-color: #444;
-    color: #b0b0b0;
+  .region-btn:hover { border-color: #444; color: #b0b0b0; }
+  .region-btn.active { background: #1a1a1a; border-color: #555; color: #e8e8e8; }
+  .role-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    border: 1px solid transparent;
+    color: #8a8a8a;
+    font: inherit;
+    font-size: 12px;
+    padding: 5px 9px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 1px;
+    transition: background 0.1s;
   }
-  .region-btn.active {
-    background: #1a1a1a;
-    border-color: #555;
-    color: #e8e8e8;
+  .role-btn:hover { background: #181818; color: #d0d0d0; }
+  .role-btn.active { background: #2a2a2a; color: #f0f0f0; }
+  .role-btn .count {
+    color: #5a5a5a;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
   }
+  .role-btn.active .count { color: #d0d0d0; }
+  .role-btn .bar-bg {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    background: #141414;
+    z-index: -1;
+    border-radius: 4px;
+  }
+  .role-btn { position: relative; z-index: 0; }
+  .clear-btn {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: 1px solid #2a2a2a;
+    color: #7a7a7a;
+    font: inherit;
+    font-size: 11px;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+    letter-spacing: 0.04em;
+  }
+  .clear-btn:hover { border-color: #555; color: #d0d0d0; }
   main {
+    flex: 1;
     max-width: 880px;
-    margin: 0 auto;
-    padding: 28px 0 80px;
+    padding: 28px 28px 80px;
+  }
+  @media (max-width: 720px) {
+    .app { flex-direction: column; }
+    .rail {
+      position: static;
+      width: 100%;
+      height: auto;
+      flex: 0 0 auto;
+      border-right: none;
+      border-bottom: 1px solid #1f1f1f;
+    }
+    main { padding: 20px 16px 60px; }
   }
   .day-header {
     color: var(--muted);
@@ -239,17 +306,26 @@
 </style>
 </head>
 <body>
-<nav class="region-bar">
-  <div class="region-bar-inner" id="region-bar">
-    <button class="region-btn active" data-region="US">🇺🇸 US</button>
-    <button class="region-btn active" data-region="UK">🇬🇧 UK</button>
-    <button class="region-btn active" data-region="EU">🇪🇺 EU</button>
-    <button class="region-btn active" data-region="Asia">🌏 Asia</button>
-    <button class="region-btn active" data-region="Global">🌐 Global</button>
-  </div>
-</nav>
-<section class="heatmap" id="heatmap"></section>
-<main id="feed"></main>
+<div class="app">
+  <aside class="rail">
+    <div class="rail-group">
+      <h3>Regions</h3>
+      <div id="region-bar">
+        <button class="region-btn active" data-region="US">🇺🇸 US</button>
+        <button class="region-btn active" data-region="UK">🇬🇧 UK</button>
+        <button class="region-btn active" data-region="EU">🇪🇺 EU</button>
+        <button class="region-btn active" data-region="Asia">🌏 Asia</button>
+        <button class="region-btn active" data-region="Global">🌐 Global</button>
+      </div>
+    </div>
+    <div class="rail-group">
+      <h3>Roles</h3>
+      <div id="role-list"></div>
+    </div>
+    <button class="clear-btn" id="clear-btn">Clear filters</button>
+  </aside>
+  <main id="feed"></main>
+</div>
 <script>
 const RECENT_DAYS = 7;
 // C-suite pantheon ordering (see csuite-pantheon.md). Empty rows hide
@@ -278,7 +354,7 @@ const ROLES_ORDER = [
 ];
 const activeRegions = new Set(['US', 'UK', 'EU', 'Asia', 'Global']);
 let allArticles = [];
-let roleFilter = null;   // {role, day} or null
+let roleFilter = null;   // role token, or null
 
 fetch('articles.json')
   .then(r => r.json())
@@ -303,6 +379,19 @@ document.getElementById('region-bar').addEventListener('click', e => {
   render();
 });
 
+document.getElementById('role-list').addEventListener('click', e => {
+  const btn = e.target.closest('.role-btn');
+  if (!btn) return;
+  const r = btn.dataset.role;
+  roleFilter = (roleFilter === r) ? null : r;
+  render();
+});
+
+document.getElementById('clear-btn').addEventListener('click', () => {
+  roleFilter = null;
+  render();
+});
+
 function matchesRegion(a) {
   if (!a.region) return true;
   return activeRegions.has(a.region);
@@ -310,16 +399,14 @@ function matchesRegion(a) {
 
 function matchesRoleFilter(a) {
   if (!roleFilter) return true;
-  const day = a.timestamp.slice(0, 10);
-  if (day !== roleFilter.day) return false;
-  return (a.roles || []).includes(roleFilter.role);
+  return (a.roles || []).includes(roleFilter);
 }
 
 function render() {
   const feed = document.getElementById('feed');
   feed.innerHTML = '';
   const regionArticles = allArticles.filter(matchesRegion);
-  renderHeatmap(regionArticles);
+  renderRail(regionArticles);
   const articles = regionArticles.filter(matchesRoleFilter);
 
   if (articles.length === 0) {
@@ -412,123 +499,43 @@ function rowEl(a) {
   return el;
 }
 
-function renderHeatmap(articles) {
-  const container = document.getElementById('heatmap');
+function renderRail(articles) {
+  const container = document.getElementById('role-list');
   container.innerHTML = '';
 
-  // Days in corpus, newest first, capped at last 10
-  const daySet = new Set(articles.map(a => a.timestamp.slice(0, 10)));
-  const days = Array.from(daySet).sort().reverse().slice(0, 10).reverse();
-
-  if (days.length === 0) return;
-
-  // Counts: counts[role][day] = n
+  // Count articles per role
   const counts = {};
-  for (const [role] of ROLES_ORDER) {
-    counts[role] = Object.fromEntries(days.map(d => [d, 0]));
-  }
+  for (const [role] of ROLES_ORDER) counts[role] = 0;
   for (const a of articles) {
-    const d = a.timestamp.slice(0, 10);
-    if (!counts[ROLES_ORDER[0][0]].hasOwnProperty(d)) continue;
     for (const r of (a.roles || [])) {
-      if (counts[r] && counts[r][d] !== undefined) counts[r][d]++;
+      if (counts.hasOwnProperty(r)) counts[r]++;
     }
   }
 
-  // Hide rows with 0 articles across the whole window (unless selected)
-  const visibleRoles = ROLES_ORDER.filter(([role]) => {
-    const total = days.reduce((s, d) => s + counts[role][d], 0);
-    if (total > 0) return true;
-    return roleFilter && roleFilter.role === role;
-  });
-  if (visibleRoles.length === 0) return;
+  // Show only roles that have articles (or the selected one if filter active)
+  const visible = ROLES_ORDER.filter(([role]) => counts[role] > 0 || roleFilter === role);
+  const max = Math.max(1, ...visible.map(([r]) => counts[r]));
 
-  // Max cell value for color scaling (over visible roles only)
-  let maxCount = 0;
-  for (const [role] of visibleRoles) {
-    for (const d of days) {
-      if (counts[role][d] > maxCount) maxCount = counts[role][d];
+  for (const [roleKey, roleDisplay] of visible) {
+    const btn = document.createElement('button');
+    btn.className = 'role-btn' + (roleFilter === roleKey ? ' active' : '');
+    btn.dataset.role = roleKey;
+
+    // Subtle bg intensity proportional to count
+    const intensity = counts[roleKey] / max;
+    if (counts[roleKey] > 0 && roleFilter !== roleKey) {
+      btn.style.background = `rgba(200, 200, 200, ${(0.02 + intensity * 0.08).toFixed(3)})`;
     }
-  }
-  maxCount = Math.max(maxCount, 1);
 
-  // Header
-  const header = document.createElement('div');
-  header.className = 'heatmap-header';
-  const title = document.createElement('div');
-  title.className = 'heatmap-title';
-  title.textContent = 'Discourse by role × day';
-  header.appendChild(title);
-  const hint = document.createElement('div');
-  hint.className = 'heatmap-hint';
-  if (roleFilter) {
-    hint.innerHTML = `filtering: <b>${ROLES_ORDER.find(r=>r[0]===roleFilter.role)?.[1]||roleFilter.role}</b> on ${formatShort(roleFilter.day)}`;
-    const pill = document.createElement('span');
-    pill.className = 'filter-pill';
-    pill.textContent = 'clear ×';
-    pill.onclick = () => { roleFilter = null; render(); };
-    hint.appendChild(pill);
-  } else {
-    hint.textContent = 'click any cell to filter the feed below';
-  }
-  header.appendChild(hint);
-  container.appendChild(header);
-
-  // Grid: 1 label col + N day cols; 1 col-label row + N role rows
-  const grid = document.createElement('div');
-  grid.className = 'heatmap-grid';
-  grid.style.gridTemplateColumns = `110px repeat(${days.length}, 1fr)`;
-
-  // Header row (corner + day labels)
-  const corner = document.createElement('div');
-  corner.className = 'hm-corner';
-  grid.appendChild(corner);
-  for (const d of days) {
-    const lab = document.createElement('div');
-    lab.className = 'hm-label-col';
-    lab.textContent = formatShort(d);
-    grid.appendChild(lab);
-  }
-
-  // Role rows (only visible roles — empty ones auto-hidden)
-  for (const [roleKey, roleDisplay] of visibleRoles) {
-    const label = document.createElement('div');
-    label.className = 'hm-label-row';
+    const label = document.createElement('span');
     label.textContent = roleDisplay;
-    grid.appendChild(label);
-    for (const d of days) {
-      const n = counts[roleKey][d];
-      const cell = document.createElement('div');
-      cell.className = 'hm-cell';
-      if (roleFilter && roleFilter.role === roleKey && roleFilter.day === d) {
-        cell.classList.add('selected');
-      }
-      if (n > 0) {
-        const intensity = 0.15 + 0.85 * (n / maxCount);
-        cell.style.background = `rgba(200, 200, 200, ${intensity.toFixed(2)})`;
-        cell.style.color = intensity > 0.5 ? '#111' : '#e8e8e8';
-        cell.textContent = n;
-      } else {
-        cell.textContent = '';
-      }
-      cell.onclick = () => {
-        if (n === 0 && !(roleFilter && roleFilter.role === roleKey && roleFilter.day === d)) return;
-        if (roleFilter && roleFilter.role === roleKey && roleFilter.day === d) {
-          roleFilter = null;
-        } else {
-          roleFilter = { role: roleKey, day: d };
-        }
-        render();
-      };
-      grid.appendChild(cell);
-    }
+    const count = document.createElement('span');
+    count.className = 'count';
+    count.textContent = counts[roleKey];
+    btn.appendChild(label);
+    btn.appendChild(count);
+    container.appendChild(btn);
   }
-  container.appendChild(grid);
-}
-
-function formatShort(iso) {
-  const d = new Date(iso + 'T12:00:00');
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
 function archiveStripe(key, arts) {
