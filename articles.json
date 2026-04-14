@@ -12,7 +12,11 @@
     "color": "yellow",
     "why": "Article discusses AI lab capacity constraints and rationing without explicit claims about worker displacement, job creation, or worker benefit—presents ambiguous signal about AI's actual market impact.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article discusses CEO-level concerns about AI lab resource constraints and strategic implications for leadership"
   },
   {
     "id": "2026-04-06-ai-supremacy-spacex-s-ai-endgame-owning-the-infrastructure-layer-of-intel",
@@ -27,7 +31,11 @@
     "color": "yellow",
     "why": "Article focuses on corporate infrastructure strategy and M&A speculation with no explicit narrative about worker displacement, job creation, or worker benefit",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article focuses on Elon Musk's strategic vision and business decisions regarding SpaceX and Tesla mergers"
   },
   {
     "id": "2026-04-06-axios-behind-the-curtain-sam-s-superintelligence-new-deal",
@@ -42,7 +50,11 @@
     "color": "red",
     "why": "Altman's framing of AI superintelligence as 'so disruptive' that America needs radical wealth redistribution amplifies the catastrophic displacement narrative requiring government intervention to address the crisis.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Sam Altman as OpenAI CEO is the primary subject discussing his policy blueprint for AI superintelligence regulation and wealth redistribution"
   },
   {
     "id": "2026-04-06-openai-blog-announcing-the-openai-safety-fellowship",
@@ -57,7 +69,11 @@
     "color": "yellow",
     "why": "Article focuses on research fellowship and talent development without explicitly framing worker benefits or addressing labor market impacts",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "entry_level"
+    ],
+    "roles_why": "Fellowship program targets early-career researchers and develops next generation of talent"
   },
   {
     "id": "2026-04-06-cnbc-jpmorgan-ceo-jamie-dimon-in-annual-letter-cites-risks-in-geo",
@@ -72,7 +88,11 @@
     "color": "yellow",
     "why": "CEO cites AI as a risk factor alongside geopolitics and markets without specifying displacement claims or worker benefits, presenting ambiguous corporate concern rather than clear doom or augmentation narrative",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article centers on Jamie Dimon's CEO perspective and commentary on risks including AI"
   },
   {
     "id": "2026-04-06-azeem-azhar-exponential-view-data-to-start-your-week-the-ai-capacity-trap",
@@ -87,7 +107,11 @@
     "color": "yellow",
     "why": "Frames AI as paradoxical—cheap access but hitting usability walls—amplifying skepticism about AI's actual utility rather than clear displacement or worker benefit",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article discusses broad labor market impacts of AI accessibility and usability challenges affecting workers generally, not specific job roles"
   },
   {
     "id": "2026-04-06-national-bureau-of-economic-re-nber-working-paper-series-artificial-intelligence-productivi",
@@ -102,7 +126,11 @@
     "color": "yellow",
     "why": "NBER working paper on executive perspectives regarding AI and workforce effects presents research findings without explicit claims of worker benefit or displacement doom; appears methodologically neutral/evidence-based rather than advocating a particular narrative.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Paper studies AI's impact on productivity and workforce through analysis of corporate executives' experiences and perspectives."
   },
   {
     "id": "2026-04-06-cnbc-cnbc-s-the-china-connection-newsletter-why-ai-isn-t-replacin",
@@ -117,7 +145,11 @@
     "color": "yellow",
     "why": "The 'not yet' qualifier and focus on paradox (AI isn't replacing jobs despite predictions) amplifies the skeptic/rebuttal narrative rather than doom or worker benefit.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article discusses broad labor market impact of AI on jobs in China across the workforce rather than specific job roles"
   },
   {
     "id": "2026-04-06-casey-newton-platformer-openai-is-getting-weird-again",
@@ -132,7 +164,11 @@
     "color": "yellow",
     "why": "Article focuses on corporate governance, internal drama, and strategic questions rather than making explicit claims about worker displacement, job creation, or worker benefit",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article focuses on OpenAI executive leadership changes and Altman's role ahead of IPO"
   },
   {
     "id": "2026-04-07-derek-thompson-why-cost-disease-is-the-secret-force-behind-america-s-toxic-",
@@ -147,7 +183,9 @@
     "color": "yellow",
     "why": "Article discusses cost disease and economic shifts affecting shared experiences rather than making an explicit claim about AI's impact on workers, jobs, or labor markets.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article discusses cost disease and social isolation trends, not specific job roles or labor market displacement"
   },
   {
     "id": "2026-04-07-harvard-business-review-decision-making-by-consensus-doesn-t-work-in-the-ai-era",
@@ -162,7 +200,12 @@
     "color": "yellow",
     "why": "The summary provides only a corporate-governance claim about decision-making structures in an AI era without explicit framing about worker benefits, job creation, or displacement.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO",
+      "middle_manager"
+    ],
+    "roles_why": "Article discusses how AI is changing decision-making structures, primarily affecting executives and managers who need to adapt from consensus-based to faster individual decision-making models"
   },
   {
     "id": "2026-04-07-international-labour-organizat-ai-in-manufacturing-challenges-and-opportunities-for-promoti",
@@ -177,7 +220,11 @@
     "color": "yellow",
     "why": "ILO report frames AI in manufacturing as presenting both challenges and opportunities without explicit claims that workers will benefit, using neutral institutional language around 'just transition' and 'decent work' rather than clear pro-worker augmentation narratives.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article discusses AI's impact on manufacturing workers and decent work broadly, not specific job roles"
   },
   {
     "id": "2026-04-07-knowledge-at-wharton-from-strategy-to-shelf-how-p-g-is-deploying-ai",
@@ -192,7 +239,11 @@
     "color": "green",
     "why": "Article explicitly frames AI as tapping into and empowering employee creative power, positioning workers as beneficiaries of AI deployment rather than subjects of displacement.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CTO_CIO"
+    ],
+    "roles_why": "Article discusses P&G's AI deployment strategy and technology implementation led by technology leadership."
   },
   {
     "id": "2026-04-07-hr-brew-overwhelmed-by-applications-recruiters-turn-to-ai-pre-screen",
@@ -207,7 +258,11 @@
     "color": "yellow",
     "why": "The summary describes a neutral tool adoption (AI pre-screening) without claiming worker benefit or harm, fitting the paradox frame of technology implementation amid mixed signals about labor impact.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "entry_level"
+    ],
+    "roles_why": "Article focuses on how AI pre-screening tools are affecting job applicants and candidates trying to enter the workforce"
   },
   {
     "id": "2026-04-07-hr-brew-ai-governance-really-matters-amid-evolving-compliance-landsc",
@@ -222,7 +277,11 @@
     "color": "yellow",
     "why": "Article uses corporate-speak terminology ('governance', 'compliance landscape', 'evolving') without making explicit claims about worker benefits, job creation, or capability enhancement.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "AI governance and compliance landscape are executive-level strategic concerns under CEO purview"
   },
   {
     "id": "2026-04-07-cnbc-elon-musk-seeks-ouster-of-openai-ceo-sam-altman-as-part-of-l",
@@ -237,7 +296,11 @@
     "color": "yellow",
     "why": "Corporate litigation between tech figures has no explicit claim about worker displacement, job creation, or worker benefit; it's a neutral business/governance dispute unrelated to labor market narratives.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article centers on Elon Musk's lawsuit seeking to remove OpenAI CEO Sam Altman from his position"
   },
   {
     "id": "2026-04-07-cnbc-google-ceo-sundar-pichai-says-ai-shift-opens-opportunities-t",
@@ -252,7 +315,11 @@
     "color": "yellow",
     "why": "CEO statement about investment opportunities is corporate-speak transformation rhetoric without explicit claims that workers benefit or are empowered by the AI shift",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article features Google CEO Sundar Pichai's strategic commentary on AI opportunities and investment decisions"
   },
   {
     "id": "2026-04-07-federal-reserve-bank-of-san-fr-ai-and-coder-employment-compiling-the-evidence",
@@ -267,7 +334,11 @@
     "color": "yellow",
     "why": "Title promises evidence compilation on AI's impact on coders, but summary provides no substantive framing—neither amplifying displacement doom, worker benefits, nor paradox critique; appears to be neutral analysis pending actual article content.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "engineer_ic"
+    ],
+    "roles_why": "Article examines how AI impacts software engineers and coders specifically"
   },
   {
     "id": "2026-04-08-ai-supremacy-mythos-bigai-datacenters-and-bottlenecks",
@@ -282,7 +353,9 @@
     "color": "yellow",
     "why": "Article focuses on IPO hype and technical infrastructure (datacenters, bottlenecks) rather than making explicit claims about worker displacement, job creation, or worker benefit",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article focuses on datacenter infrastructure and IPO hype, not on any specific job role or labor market impact"
   },
   {
     "id": "2026-04-08-azeem-azhar-exponential-view-where-we-re-taking-exponential-view-next",
@@ -297,7 +370,9 @@
     "color": "yellow",
     "why": "Article is about editorial staffing for a newsletter/research studio and contains no narrative claim about AI's impact on labor markets or workers.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article is about editorial/publishing decisions for a newsletter, not about AI's impact on any job role"
   },
   {
     "id": "2026-04-08-derek-thompson-the-substack-ification-of-american-religion",
@@ -312,7 +387,9 @@
     "color": "yellow",
     "why": "Article discusses social and religious transformation trends with no explicit claims about AI's impact on labor, workers, or jobs—falls outside the AI labor classification framework",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article discusses religion, media, and politics trends with no focus on specific job roles or labor market impacts"
   },
   {
     "id": "2026-04-08-harvard-business-review-managers-and-executives-disagree-on-ai-and-it-s-costing-comp",
@@ -327,7 +404,12 @@
     "color": "yellow",
     "why": "Article focuses on organizational disagreement and internal friction over AI strategy rather than making explicit claims about worker displacement, job creation, or worker benefit.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO",
+      "middle_manager"
+    ],
+    "roles_why": "Article centrally examines disagreement between executives and managers on AI strategy and its business impact"
   },
   {
     "id": "2026-04-08-harvard-business-review-what-ai-can-t-do-the-new-job-of-leadership",
@@ -342,7 +424,11 @@
     "color": "yellow",
     "why": "Title suggests a reframing of leadership roles in an AI era, but summary lacks explicit claims about worker benefits, job creation, or augmentation—appears to be corporate transformation rhetoric without clear worker-benefit positioning.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article examines how AI is reshaping the core responsibilities and job of leadership/CEOs"
   },
   {
     "id": "2026-04-08-federal-reserve-bank-of-new-yo-new-york-fed-to-release-research-on-generative-ai-in-the-wor",
@@ -357,7 +443,11 @@
     "color": "yellow",
     "why": "Announcement of forthcoming research with no explicit claims about worker displacement, job creation, or worker benefits — purely informational about an upcoming study.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article discusses broad workplace impacts of generative AI across employees generally, not specific job roles"
   },
   {
     "id": "2026-04-08-hr-brew-ai-literacy-is-popular-at-the-dol",
@@ -372,7 +462,11 @@
     "color": "yellow",
     "why": "Article mentions AI literacy initiatives at the Department of Labor without explicit claims that workers benefit, gain skills, or are empowered—it's a neutral policy/program announcement lacking pro-worker framing.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article discusses AI literacy initiatives at the Department of Labor affecting workers broadly across skill levels"
   },
   {
     "id": "2026-04-08-boston-consulting-group-how-bcg-uses-responsible-ai-in-hiring",
@@ -387,7 +481,11 @@
     "color": "yellow",
     "why": "Corporate case study about AI implementation in hiring with no explicit claims about worker benefits, job creation, or worker empowerment — pure corporate-speak about 'responsible AI' without substantive narrative positioning.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "entry_level"
+    ],
+    "roles_why": "Article focuses on how AI hiring practices affect job candidates and new entrants to the workforce at BCG"
   },
   {
     "id": "2026-04-08-cnbc-openai-will-allocate-ipo-shares-to-retail-investors-as-it-pr",
@@ -402,7 +500,11 @@
     "color": "yellow",
     "why": "Article discusses OpenAI IPO share allocation mechanics with no framing about labor market impact, job creation, displacement, or worker benefits — it is a corporate finance announcement without narrative positioning on AI and labor.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CFO"
+    ],
+    "roles_why": "The article centers on OpenAI's CFO making statements about IPO share allocation plans"
   },
   {
     "id": "2026-04-08-hr-brew-will-employing-ai-instead-of-humans-really-help-companies-bo",
@@ -417,7 +519,11 @@
     "color": "yellow",
     "why": "The headline poses a skeptical question about AI's actual economic benefit to companies, amplifying the productivity paradox narrative rather than claiming clear displacement or worker benefit.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article discusses AI's impact on company profitability and bottom lines, which is a CEO-level business decision and outcome"
   },
   {
     "id": "2026-04-08-cnbc-crowdstrike-ceo-ai-finding-vulnerabilities-will-cause-high-n",
@@ -432,7 +538,11 @@
     "color": "yellow",
     "why": "The article presents a cybersecurity threat forecast without addressing worker displacement, job creation, or worker benefit—it's a technical/industry risk narrative that doesn't fit the labor market frames.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "The article features the CrowdStrike CEO providing commentary on AI and cybersecurity trends"
   },
   {
     "id": "2026-04-09-reuters-bendigo-and-adelaide-bank-flags-job-cuts-in-ai-push-posts-q3",
@@ -447,7 +557,11 @@
     "color": "red",
     "why": "Article directly flags job cuts tied to AI adoption, amplifying the mass-displacement narrative without mentioning worker benefits or new job creation.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article discusses job cuts affecting bank employees broadly as the institution adopts AI technology"
   },
   {
     "id": "2026-04-09-harvard-business-review-hiring-your-first-chief-ai-officer-h0385h",
@@ -462,7 +576,11 @@
     "color": "yellow",
     "why": "Article focuses on corporate governance and hiring strategy for AI leadership roles without explicit claims about worker benefits, job creation, or worker empowerment.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CTO_CIO"
+    ],
+    "roles_why": "Article focuses on hiring and role definition for chief AI officer, a technology leadership position"
   },
   {
     "id": "2026-04-09-axios-gen-z-s-fading-ai-hype",
@@ -477,7 +595,11 @@
     "color": "yellow",
     "why": "Article reports mixed/ambivalent sentiment data (less excited, more angry) without amplifying either displacement doom or worker-benefit claims, fitting the paradox/skeptic frame of unclear positioning.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "entry_level"
+    ],
+    "roles_why": "Article focuses on Gen Z's changing sentiment toward AI as they enter the workforce and early careers"
   },
   {
     "id": "2026-04-09-ben-thompson-stratechery-an-interview-with-new-york-times-ceo-meredith-kopit-levien-a",
@@ -492,7 +614,11 @@
     "color": "yellow",
     "why": "Positions human expertise as a defensive moat against AI rather than claiming workers benefit from AI tools or collaboration, framing the relationship as competitive rather than augmentative.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article is an interview with the New York Times CEO discussing her strategy and views on AI and human expertise"
   },
   {
     "id": "2026-04-09-derek-thompson-how-zombie-flow-took-over-culture",
@@ -507,7 +633,9 @@
     "color": "yellow",
     "why": "Article appears to be cultural commentary on subjective well-being rather than making explicit claims about AI's labor market impact in any direction.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article about cultural trends and happiness; no discussion of specific job roles or AI labor market impact"
   },
   {
     "id": "2026-04-09-knowledge-at-wharton-google-s-vice-president-of-ai-and-marketing-strategy-joshua-",
@@ -522,7 +650,11 @@
     "color": "yellow",
     "why": "Summary describes AI reshaping strategy and creativity without explicit claims that workers benefit, gain new capabilities, or are empowered—pure corporate transformation rhetoric lacking pro-worker framing.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CMO"
+    ],
+    "roles_why": "Article focuses on a marketing executive's perspective on AI's impact on marketing strategy and creativity"
   },
   {
     "id": "2026-04-09-knowledge-at-wharton-people-led-tech-powered-walmart-s-ai-job-shift",
@@ -537,7 +669,11 @@
     "color": "yellow",
     "why": "The summary uses corporate transformation rhetoric ('People-Led, Tech-Powered', 'introduce AI') without explicit claims that workers benefit, gain new jobs, or are empowered—it's ambiguous about outcomes.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Chief people officer (C-suite executive) discussing AI implementation strategy across the organization"
   },
   {
     "id": "2026-04-09-hr-brew-why-your-talent-system-isn-t-keeping-pace-with-ai-and-how-to",
@@ -552,7 +688,11 @@
     "color": "yellow",
     "why": "Corporate HR guidance on updating talent systems to keep pace with AI adoption—transformation rhetoric without explicit claims that workers benefit or gain capability.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "middle_manager"
+    ],
+    "roles_why": "Article discusses how managers and talent systems need to adapt to AI, addressing HR leadership's operational challenges"
   },
   {
     "id": "2026-04-09-shrm-rethinking-workforce-strategy-in-the-age-of-ai-with-reena-gu",
@@ -567,7 +707,11 @@
     "color": "yellow",
     "why": "Title uses corporate transformation rhetoric ('rethinking workforce strategy') without explicit claims that workers benefit, amplifying ambiguity rather than clear displacement or augmentation narrative",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article discusses workforce strategy decision-making at the executive level with focus on C-suite leadership perspective on AI impact"
   },
   {
     "id": "2026-04-09-hr-brew-why-the-ai-performance-divide-is-widening-and-what-to-do-abo",
@@ -582,7 +726,11 @@
     "color": "yellow",
     "why": "The summary mentions a 'performance divide' widening without clearly establishing whether AI benefits or harms workers, remaining ambiguous on the outcome for workers themselves.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article discusses how AI is creating performance divides among workers broadly, not specific executive or role-based cohorts"
   },
   {
     "id": "2026-04-09-stanford-graduate-school-of-bu-ai-will-test-governments-on-jobs-training-and-public-trust",
@@ -597,7 +745,11 @@
     "color": "yellow",
     "why": "Title and summary frame AI as a policy challenge requiring government response on jobs and training, without explicit claims of worker displacement or worker benefit—positioning it as an ambiguous governance issue.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article discusses AI's broad impact on jobs, training, and workers across the economy rather than specific role categories"
   },
   {
     "id": "2026-04-10-openai-blog-applications-of-ai-at-openai",
@@ -612,7 +764,9 @@
     "color": "yellow",
     "why": "A product overview blog post describing AI applications lacks explicit claims about worker benefits, job creation, or capability expansion — it's neutral corporate messaging about tool availability rather than a narrative about worker outcomes.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article describes AI product applications broadly without focusing on any specific job role as primary subject"
   },
   {
     "id": "2026-04-10-openai-blog-using-projects-in-chatgpt",
@@ -627,7 +781,9 @@
     "color": "yellow",
     "why": "Product feature announcement with neutral corporate-speak terms like 'organize', 'manage', and 'collaborate' that describe tool functionality without explicit claims that workers benefit or are empowered by the feature.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article is a product feature tutorial with no focus on any specific job role or labor market impact"
   },
   {
     "id": "2026-04-10-openai-blog-chatgpt-for-managers",
@@ -642,7 +798,11 @@
     "color": "green",
     "why": "Article explicitly frames ChatGPT as a tool that helps managers improve team effectiveness and work quality, positioning AI as enhancing managerial capability and worker outcomes rather than replacing them.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "middle_manager"
+    ],
+    "roles_why": "Article focuses on how managers use ChatGPT to improve their management practices and team effectiveness"
   },
   {
     "id": "2026-04-10-openai-blog-working-with-files-in-chatgpt",
@@ -657,7 +817,9 @@
     "color": "yellow",
     "why": "Product feature announcement with no narrative claim about labor market impact, displacement, or worker benefit — purely functional/technical content",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article is a product feature tutorial with no discussion of any job roles or labor market impacts"
   },
   {
     "id": "2026-04-10-axios-what-ai-ceos-still-don-t-get-about-washington",
@@ -672,7 +834,11 @@
     "color": "yellow",
     "why": "Article focuses on governance and policy debate between AI executives and Congress without making explicit claims about worker displacement, job creation, or worker benefits.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article focuses on AI CEOs' policy pitches and their disconnect with Washington's actual tech governance practices"
   },
   {
     "id": "2026-04-10-ai-supremacy-the-biggest-ai-as-a-service-company-in-history",
@@ -687,7 +853,9 @@
     "color": "yellow",
     "why": "Article is a curated directory of guides and op-eds with no explicit narrative claim about worker impact, job creation, or displacement—purely informational aggregation",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article is a directory/curated list of links about Claude AI and Anthropic products, not focused on any specific job role"
   },
   {
     "id": "2026-04-10-azeem-azhar-exponential-view-mythos-and-the-mispricing-of-everything",
@@ -702,7 +870,9 @@
     "color": "yellow",
     "why": "The summary suggests a paradox/skeptical frame by emphasizing the inseparability of AI capability and danger rather than making explicit claims about worker displacement or augmentation.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article discusses AI capabilities and dangers as abstract concepts, not specific job roles or labor market impacts"
   },
   {
     "id": "2026-04-10-the-information-openai-stargate-leaders-depart-in-latest-shakeup-to-data-cen",
@@ -717,7 +887,11 @@
     "color": "yellow",
     "why": "Article reports internal corporate restructuring and executive departures with no claims about worker displacement, job creation, or worker impact—purely vendor/strategy news.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CTO_CIO"
+    ],
+    "roles_why": "Article focuses on senior technology executives and their departures from OpenAI's data center initiative"
   },
   {
     "id": "2026-04-10-wired-suspect-arrested-for-allegedly-throwing-molotov-cocktail-at-",
@@ -732,7 +906,11 @@
     "color": "yellow",
     "why": "This is a crime/security incident article with no narrative claim about AI's labor market impact; it does not amplify displacement, augmentation, or paradox framings.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article focuses on Sam Altman as OpenAI's CEO being the target of an attack at his home"
   },
   {
     "id": "2026-04-10-shrm-stay-neutral-with-ai-drafted-workplace-allegations",
@@ -747,7 +925,11 @@
     "color": "yellow",
     "why": "Article addresses procedural guidance on AI tool use in workplace disputes without making explicit claims about worker benefits, job creation, or displacement—purely neutral/administrative framing.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "middle_manager"
+    ],
+    "roles_why": "Article addresses managers handling AI-drafted workplace allegations and maintaining neutrality in their HR processes"
   },
   {
     "id": "2026-04-10-hr-executive-upskill-reskill-and-retain-how-to-future-proof-your-workforc",
@@ -762,7 +944,11 @@
     "color": "yellow",
     "why": "Article uses corporate transformation rhetoric ('upskill, reskill, retain') without explicitly claiming workers benefit; frames automation as making skills obsolete (displacement concern) while offering only generic HR solutions, creating paradox/ambivalence rather than clear pro-worker augmentation claims",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article discusses broad workforce upskilling and reskilling strategies in response to AI automation affecting workers generally"
   },
   {
     "id": "2026-04-10-new-york-times-technology-molotov-cocktail-is-hurled-at-home-of-sam-altman-openai-s-ce",
@@ -777,7 +963,11 @@
     "color": "yellow",
     "why": "This is a crime/security incident report about Sam Altman with no substantive claims about AI's labor market impact, narrative framing, or worker effects.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Sam Altman is the primary subject of the article in his capacity as OpenAI's CEO"
   },
   {
     "id": "2026-04-11-new-york-times-business-banks-are-warned-about-anthropic-s-new-powerful-a-i-technolo",
@@ -792,7 +982,11 @@
     "color": "yellow",
     "why": "Article focuses on regulatory caution and cybersecurity risks rather than job displacement, worker benefit, or productivity claims—it's a governance/risk narrative that doesn't fit the three labor-market frames cleanly but leans skeptical/cautionary rather than catastrophic or optimistic about worker outcomes",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Bank executives are the primary subject being warned by government officials about AI cyberthreats"
   },
   {
     "id": "2026-04-11-the-information-the-tokenmaxxing-tide-may-already-be-turning",
@@ -807,7 +1001,11 @@
     "color": "yellow",
     "why": "Article describes internal competitive AI adoption practices at Meta without claiming worker benefits or harms, presenting mixed signals about whether this trend will spread—classic paradox/skepticism framing",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article discusses employees at tech companies adopting AI usage practices without focusing on any specific executive or specialized role"
   },
   {
     "id": "2026-04-12-azeem-azhar-exponential-view-exponential-view-569-when-the-future-is-uncertain-what-do-yo",
@@ -822,7 +1020,11 @@
     "color": "yellow",
     "why": "Article discusses education and AI futures without explicit claims about worker displacement, job creation, or worker benefit—framing is exploratory/uncertain rather than committed to any labor market narrative.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "entry_level"
+    ],
+    "roles_why": "Article discusses what to teach in light of AI, directly addressing education and career preparation for new entrants to the workforce."
   },
   {
     "id": "2026-04-12-the-guardian-technology-is-ai-the-greatest-art-heist-in-history",
@@ -837,7 +1039,11 @@
     "color": "red",
     "why": "Article amplifies AI-doom narrative by characterizing generative AI as inherently destructive ('plundering', 'slop'), citing CEO claims about eliminating 'vast swathes of work', and framing the technology as fundamentally predatory ('greatest art heist').",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article discusses AI company CEOs as primary subjects making public statements about AI's labor market impact"
   },
   {
     "id": "2026-04-12-lenny-rachitsky-lenny-s-newsle-hard-truths-about-building-in-the-ai-era-keith-rabois-khosla",
@@ -852,7 +1058,12 @@
     "color": "yellow",
     "why": "Summary discusses AI's impact on product management roles and hiring frameworks without explicit claims of worker benefit or harm, presenting analytical/skeptical framing rather than doom or augmentation narrative.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO",
+      "engineer_ic"
+    ],
+    "roles_why": "Article discusses hiring frameworks and product strategy decisions relevant to executive leadership and how AI impacts product management and engineering roles"
   },
   {
     "id": "2026-04-12-tyler-cowen-marginal-revolutio-sunday-assorted-links",
@@ -867,7 +1078,9 @@
     "color": "yellow",
     "why": "Assorted links collection with mixed signals (AI writing preferred by judges, but questions about AI limiting comprehension) presents ambivalent/paradoxical framing without clear position on worker impact",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article is a link roundup touching on various AI topics but not centering on any specific job role as primary subject"
   },
   {
     "id": "2026-04-13-financial-times-technology-the-less-technically-literate-might-be-a-touch-concerned-tha",
@@ -882,7 +1095,11 @@
     "color": "yellow",
     "why": "A profile of a communications strategist with a tongue-in-cheek title suggests skepticism or ironic framing about AI narratives rather than amplifying clear displacement or augmentation claims.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CMO"
+    ],
+    "roles_why": "Article focuses on critical communications strategy work, a marketing/communications leadership function"
   },
   {
     "id": "2026-04-13-financial-times-technology-meta-builds-ai-version-of-mark-zuckerberg-to-interact-with-s",
@@ -897,7 +1114,11 @@
     "color": "yellow",
     "why": "Article focuses on Meta's AI development project without explicit claims about worker benefits, job creation, or displacement—it's primarily descriptive of corporate innovation strategy rather than amplifying a clear narrative about labor market impact.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Mark Zuckerberg as CEO is the primary subject being trained as an AI character for staff interaction"
   },
   {
     "id": "2026-04-13-bloomberg-technology-why-you-should-wait-out-ai-s-super-spending-false-start",
@@ -912,7 +1133,11 @@
     "color": "yellow",
     "why": "Article frames AI as overhyped with fundamental technical limits and diminishing returns, amplifying the skeptic/paradox narrative that AI claims are exaggerated rather than delivering transformative impact.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article features CEO Janusz Marecki as the primary subject discussing AI hype and LLM limitations from an industry insider perspective"
   },
   {
     "id": "2026-04-13-axios-the-ai-revolution-is-sorting-people-into-three-camps",
@@ -927,7 +1152,11 @@
     "color": "yellow",
     "why": "Article frames AI adoption as creating fragmented perspectives and uncertainty ('three camps', 'disconnect', doubters vs. power users) rather than claiming clear worker displacement or worker benefit",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article discusses broad societal divisions around AI adoption among workers and people generally, not specific job roles"
   },
   {
     "id": "2026-04-13-fast-company-technology-anthropic-s-office-is-surprisingly-ai-first-even-for-an-ai-c",
@@ -942,7 +1171,11 @@
     "color": "yellow",
     "why": "Article describes organizational transformation and workflow restructuring around AI without explicitly claiming workers benefit, gain capability, or experience improved outcomes—it presents change as premise without clear worker-benefit framing.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article discusses how Anthropic employees broadly are reorganizing work around AI tools like Claude, not any specific executive or role-based subset"
   },
   {
     "id": "2026-04-13-bloomberg-technology-full-interview-roubini-on-iran-war-oil-shock-ai-boom",
@@ -957,7 +1190,11 @@
     "color": "yellow",
     "why": "Article frames AI as part of a macroeconomic 'tug-of-war' between stagflation and growth without making explicit claims about worker displacement or worker benefit.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Nouriel Roubini is interviewed in his capacity as CEO of Roubini Macro Associates discussing economic and geopolitical topics."
   },
   {
     "id": "2026-04-13-hr-executive-hr-investment-in-ai-is-booming-but-most-companies-aren-t-see",
@@ -972,7 +1209,11 @@
     "color": "yellow",
     "why": "Amplifies the productivity paradox and skepticism narrative — high AI investment but lack of meaningful results, suggesting overstated claims and implementation gaps rather than worker displacement or clear benefits.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CFO"
+    ],
+    "roles_why": "Article discusses HR investment decisions and ROI measurement, which are CFO-level financial and strategic concerns"
   },
   {
     "id": "2026-04-13-hr-executive-ibm-chro-focus-on-ai-productivity-at-your-own-risk",
@@ -987,7 +1228,11 @@
     "color": "yellow",
     "why": "CHRO cautions against narrow productivity focus and suggests overlooked potential, amplifying a skeptical/paradox narrative that challenges prevailing AI displacement claims without explicitly framing worker benefits.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "CHRO is discussing AI strategy and enterprise growth implications for C-suite decision-making and organizational leadership"
   },
   {
     "id": "2026-04-13-mit-technology-review-want-to-understand-the-current-state-of-ai-check-out-these-c",
@@ -1002,7 +1247,9 @@
     "color": "yellow",
     "why": "Article acknowledges contradictory AI narratives (gold rush, bubble, job displacement, capability limitations) and positions an index report as cutting through conflicting signals rather than endorsing any single frame.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article is a high-level overview of AI trends and statistics; no specific job role is a primary subject"
   },
   {
     "id": "2026-04-13-hr-brew-ai-readiness-gap-is-slowing-productivity-gains",
@@ -1017,7 +1264,11 @@
     "color": "yellow",
     "why": "The article frames AI as overstated/underdelivering (productivity gains are being slowed by implementation gaps rather than worker displacement or clear benefits), amplifying the paradox/skeptic narrative.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article discusses AI readiness gaps affecting broad employee productivity rather than specific executive or role-based impacts"
   },
   {
     "id": "2026-04-13-the-economist-finance-the-tech-jobs-bust-is-real-don-t-blame-ai-yet",
@@ -1032,7 +1283,11 @@
     "color": "yellow",
     "why": "Article frames tech layoffs as real but attributes them to factors other than AI, amplifying the skeptical paradox that AI threat narratives may be overstated",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article focuses on technology firms shedding workers broadly, not a specific executive or role type"
   },
   {
     "id": "2026-04-13-fast-company-technology-the-latest-gallup-poll-reveals-these-3-findings-on-ai-in-the",
@@ -1047,7 +1302,11 @@
     "color": "yellow",
     "why": "Article presents mixed signals on AI adoption (increased use but widespread skepticism and job-replacement concerns) without resolving toward either doom or worker benefit, epitomizing the paradox/ambivalence frame.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article focuses on broad employee experiences and attitudes toward AI adoption across the American workforce"
   },
   {
     "id": "2026-04-13-ars-technica-meta-spins-up-ai-version-of-mark-zuckerberg-to-engage-with-e",
@@ -1062,7 +1321,11 @@
     "color": "yellow",
     "why": "Article describes a corporate technology development project (AI avatar training) without making explicit claims about worker displacement, job creation, or worker benefits.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Mark Zuckerberg as CEO is the primary subject, with the article focused on his personal involvement in training an AI version of himself"
   },
   {
     "id": "2026-04-13-the-information-openai-memo-cites-staggering-demand-for-joint-aws-product-sa",
@@ -1077,7 +1340,11 @@
     "color": "yellow",
     "why": "Article reports on corporate business strategy and cloud partnerships with no explicit claims about worker impact, displacement, or benefits—purely vendor/commercial narrative.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article discusses OpenAI executive memo about business strategy and cloud partnerships, which is CEO/executive leadership strategy context"
   },
   {
     "id": "2026-04-13-hr-dive-ai-is-stress-testing-hiring-and-hurting-trust",
@@ -1092,7 +1359,11 @@
     "color": "yellow",
     "why": "Article frames AI hiring as creating a paradox of speed without clarity and trust erosion, amplifying skepticism about AI's actual benefits rather than doom or worker empowerment",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "general_workforce"
+    ],
+    "roles_why": "Article discusses how AI is affecting the hiring system and worker trust broadly, not specific executive or role-based impacts"
   },
   {
     "id": "2026-04-13-the-guardian-technology-meta-creating-ai-version-of-mark-zuckerberg-so-staff-can-tal",
@@ -1107,7 +1378,11 @@
     "color": "yellow",
     "why": "Article describes AI tool implementation without framing worker benefits or harms—presents corporate adoption of technology with neutral tone ('help workers feel connected') lacking explicit claims about job creation, displacement, or worker empowerment.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article centers on Mark Zuckerberg as CEO and the creation of an AI version of him for employee interaction"
   },
   {
     "id": "2026-04-13-hr-dive-ai-industry-recruiting-platform-faces-multiple-lawsuits-over",
@@ -1122,7 +1397,9 @@
     "color": "yellow",
     "why": "Article reports on a data breach lawsuit against an AI recruiting platform—a legal/compliance incident with no narrative claim about worker displacement, job creation, or AI's labor market impact.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article focuses on a data breach lawsuit against a recruiting platform; no specific job roles are primary subjects of discussion"
   },
   {
     "id": "2026-04-13-azeem-azhar-exponential-view-data-to-start-your-week-the-jet-fuel-inflection-point",
@@ -1137,7 +1414,9 @@
     "color": "yellow",
     "why": "The summary offers no explicit claim about worker benefits or harms; it presents a cryptic observation about conflict and policy with ambiguous implications for labor markets.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article about geopolitical conflict and policy is not centrally about any specific job role"
   },
   {
     "id": "2026-04-13-business-insider-goldman-is-working-with-anthropic-on-ai-cyber-risks-after-ne",
@@ -1152,7 +1431,11 @@
     "color": "yellow",
     "why": "Article focuses on AI safety/cybersecurity risks and regulatory concerns rather than making claims about labor market displacement, job creation, or worker impact.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Goldman Sachs CEO David Solomon is the primary subject meeting with officials about AI cyber risks"
   },
   {
     "id": "2026-04-13-the-guardian-business-goldman-sachs-chief-hyper-aware-of-risks-from-anthropic-s-my",
@@ -1167,7 +1450,11 @@
     "color": "yellow",
     "why": "Article focuses on corporate risk management and cybersecurity governance without making claims about worker displacement, job creation, or worker benefits.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "David Solomon's statements as Goldman Sachs CEO about AI risks and strategy are the primary subject"
   },
   {
     "id": "2026-04-13-bloomberg-technology-anthropic-hires-trump-linked-lobbying-firm-ballard-partners",
@@ -1182,7 +1469,9 @@
     "color": "yellow",
     "why": "Article reports corporate/political maneuvering (lobbying firm hire) with no narrative claim about worker displacement, job creation, or labor market impact.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [],
+    "roles_why": "Article focuses on corporate lobbying strategy, not labor market impacts on specific job roles"
   },
   {
     "id": "2026-04-13-fortune-after-growing-up-on-a-dairy-farm-this-peter-thiel-backed-fou",
@@ -1197,7 +1486,11 @@
     "color": "green",
     "why": "Article frames AI as a tool that helps preserve and save an industry (cattle ranching), positioning technology as enabling workers/farmers to continue their livelihoods rather than displacing them.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article profiles Halter CEO Craig Piggott and his leadership of an AI company in agriculture"
   },
   {
     "id": "2026-04-13-business-insider-linkedin-is-quietly-moving-into-the-ai-training-business",
@@ -1212,7 +1505,11 @@
     "color": "yellow",
     "why": "Article reports on LinkedIn's business expansion into AI training without framing worker impact either as displacement threat or worker empowerment—it's a neutral vendor/market development story.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article focuses on LinkedIn CEO Ryan Roslansky's strategic business decision to enter the AI training marketplace"
   },
   {
     "id": "2026-04-13-bloomberg-technology-zoetis-ceo-ai-boosts-resilient-animal-health-business",
@@ -1227,7 +1524,11 @@
     "color": "yellow",
     "why": "CEO discusses AI transforming business and industry resilience without explicit claims about worker benefits, job creation, or worker empowerment—pure corporate transformation rhetoric.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Article centers on CEO Kristin Peck's comments about AI's impact on her business"
   },
   {
     "id": "2026-04-13-the-information-altman-addresses-home-attack",
@@ -1242,7 +1543,11 @@
     "color": "yellow",
     "why": "Article focuses on a security incident and Altman's call to de-escalate rhetoric rather than making claims about worker displacement, job creation, or AI's labor market impact",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CEO"
+    ],
+    "roles_why": "Sam Altman as OpenAI CEO is the primary subject addressing public criticism of the AI industry"
   },
   {
     "id": "2026-04-13-the-information-openai-stargate-execs-to-join-meta-s-new-compute-unit",
@@ -1257,7 +1562,11 @@
     "color": "yellow",
     "why": "Article focuses on corporate M&A and talent competition between tech giants with no explicit claims about worker displacement, job creation, or worker benefits.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CTO_CIO"
+    ],
+    "roles_why": "Article focuses on senior technology executives joining Meta to lead AI infrastructure initiatives"
   },
   {
     "id": "2026-04-13-the-information-exclusive-openai-data-center-leaders-depart",
@@ -1272,6 +1581,10 @@
     "color": "yellow",
     "why": "Executive departures at a data center initiative are organizational/business news with no explicit claim about worker displacement, job creation, or labor market impact.",
     "shadow_flag": "ok",
-    "shadow_note": ""
+    "shadow_note": "",
+    "roles": [
+      "CTO_CIO"
+    ],
+    "roles_why": "Article discusses departure of senior technology executives leading OpenAI's data center infrastructure initiative"
   }
 ]

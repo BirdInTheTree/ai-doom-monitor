@@ -162,6 +162,80 @@
     padding: 40px;
     font-size: 12px;
   }
+  /* Role heatmap */
+  .heatmap {
+    max-width: 880px;
+    margin: 20px auto 32px;
+    padding: 0 16px;
+  }
+  .heatmap-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 14px;
+  }
+  .heatmap-title {
+    color: #d8d8d8;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .heatmap-hint {
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .heatmap-grid {
+    display: grid;
+    gap: 2px;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+  }
+  .hm-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+    cursor: pointer;
+    background: #1a1a1a;
+    color: #d8d8d8;
+    border-radius: 2px;
+    transition: outline 0.08s;
+  }
+  .hm-cell:hover {
+    outline: 1px solid #7a7a7a;
+  }
+  .hm-cell.selected {
+    outline: 1px solid #e8e8e8;
+  }
+  .hm-label-row {
+    color: var(--muted);
+    padding: 0 8px 0 0;
+    text-align: right;
+    white-space: nowrap;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .hm-label-col {
+    color: var(--muted);
+    text-align: center;
+    font-size: 10px;
+    padding: 0 0 4px 0;
+  }
+  .hm-corner { background: transparent; }
+  .filter-pill {
+    display: inline-block;
+    margin-left: 12px;
+    padding: 3px 10px;
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border-radius: 12px;
+    font-size: 11px;
+    cursor: pointer;
+  }
+  .filter-pill:hover { background: #3a3a3a; }
 </style>
 </head>
 <body>
@@ -174,11 +248,23 @@
     <button class="region-btn active" data-region="Global">🌐 Global</button>
   </div>
 </nav>
+<section class="heatmap" id="heatmap"></section>
 <main id="feed"></main>
 <script>
 const RECENT_DAYS = 7;
+const ROLES_ORDER = [
+  ['CEO',              'CEO'],
+  ['CFO',              'CFO'],
+  ['CTO_CIO',          'CTO / CIO'],
+  ['CMO',              'CMO'],
+  ['middle_manager',   'middle mgr'],
+  ['entry_level',      'entry-level'],
+  ['engineer_ic',      'engineer / IC'],
+  ['general_workforce','general'],
+];
 const activeRegions = new Set(['US', 'UK', 'EU', 'Asia', 'Global']);
 let allArticles = [];
+let roleFilter = null;   // {role, day} or null
 
 fetch('articles.json')
   .then(r => r.json())
@@ -208,13 +294,22 @@ function matchesRegion(a) {
   return activeRegions.has(a.region);
 }
 
+function matchesRoleFilter(a) {
+  if (!roleFilter) return true;
+  const day = a.timestamp.slice(0, 10);
+  if (day !== roleFilter.day) return false;
+  return (a.roles || []).includes(roleFilter.role);
+}
+
 function render() {
   const feed = document.getElementById('feed');
   feed.innerHTML = '';
-  const articles = allArticles.filter(matchesRegion);
+  const regionArticles = allArticles.filter(matchesRegion);
+  renderHeatmap(regionArticles);
+  const articles = regionArticles.filter(matchesRoleFilter);
 
   if (articles.length === 0) {
-    feed.innerHTML = '<div class="empty">no articles match selected regions</div>';
+    feed.innerHTML = '<div class="empty">no articles match current filters</div>';
     return;
   }
 
@@ -301,6 +396,117 @@ function rowEl(a) {
   el.appendChild(sourceSpan);
   el.appendChild(titleSpan);
   return el;
+}
+
+function renderHeatmap(articles) {
+  const container = document.getElementById('heatmap');
+  container.innerHTML = '';
+
+  // Days in corpus, newest first, capped at last 10
+  const daySet = new Set(articles.map(a => a.timestamp.slice(0, 10)));
+  const days = Array.from(daySet).sort().reverse().slice(0, 10).reverse();
+
+  if (days.length === 0) return;
+
+  // Counts: counts[role][day] = n
+  const counts = {};
+  for (const [role] of ROLES_ORDER) {
+    counts[role] = Object.fromEntries(days.map(d => [d, 0]));
+  }
+  for (const a of articles) {
+    const d = a.timestamp.slice(0, 10);
+    if (!counts[ROLES_ORDER[0][0]].hasOwnProperty(d)) continue;
+    for (const r of (a.roles || [])) {
+      if (counts[r] && counts[r][d] !== undefined) counts[r][d]++;
+    }
+  }
+
+  // Max cell value for color scaling
+  let maxCount = 0;
+  for (const [role] of ROLES_ORDER) {
+    for (const d of days) {
+      if (counts[role][d] > maxCount) maxCount = counts[role][d];
+    }
+  }
+  maxCount = Math.max(maxCount, 1);
+
+  // Header
+  const header = document.createElement('div');
+  header.className = 'heatmap-header';
+  const title = document.createElement('div');
+  title.className = 'heatmap-title';
+  title.textContent = 'Discourse by role × day';
+  header.appendChild(title);
+  const hint = document.createElement('div');
+  hint.className = 'heatmap-hint';
+  if (roleFilter) {
+    hint.innerHTML = `filtering: <b>${ROLES_ORDER.find(r=>r[0]===roleFilter.role)?.[1]||roleFilter.role}</b> on ${formatShort(roleFilter.day)}`;
+    const pill = document.createElement('span');
+    pill.className = 'filter-pill';
+    pill.textContent = 'clear ×';
+    pill.onclick = () => { roleFilter = null; render(); };
+    hint.appendChild(pill);
+  } else {
+    hint.textContent = 'click any cell to filter the feed below';
+  }
+  header.appendChild(hint);
+  container.appendChild(header);
+
+  // Grid: 1 label col + N day cols; 1 col-label row + N role rows
+  const grid = document.createElement('div');
+  grid.className = 'heatmap-grid';
+  grid.style.gridTemplateColumns = `110px repeat(${days.length}, 1fr)`;
+
+  // Header row (corner + day labels)
+  const corner = document.createElement('div');
+  corner.className = 'hm-corner';
+  grid.appendChild(corner);
+  for (const d of days) {
+    const lab = document.createElement('div');
+    lab.className = 'hm-label-col';
+    lab.textContent = formatShort(d);
+    grid.appendChild(lab);
+  }
+
+  // Role rows
+  for (const [roleKey, roleDisplay] of ROLES_ORDER) {
+    const label = document.createElement('div');
+    label.className = 'hm-label-row';
+    label.textContent = roleDisplay;
+    grid.appendChild(label);
+    for (const d of days) {
+      const n = counts[roleKey][d];
+      const cell = document.createElement('div');
+      cell.className = 'hm-cell';
+      if (roleFilter && roleFilter.role === roleKey && roleFilter.day === d) {
+        cell.classList.add('selected');
+      }
+      if (n > 0) {
+        const intensity = 0.15 + 0.85 * (n / maxCount);
+        cell.style.background = `rgba(200, 200, 200, ${intensity.toFixed(2)})`;
+        cell.style.color = intensity > 0.5 ? '#111' : '#e8e8e8';
+        cell.textContent = n;
+      } else {
+        cell.textContent = '';
+      }
+      cell.onclick = () => {
+        if (n === 0 && !(roleFilter && roleFilter.role === roleKey && roleFilter.day === d)) return;
+        if (roleFilter && roleFilter.role === roleKey && roleFilter.day === d) {
+          roleFilter = null;
+        } else {
+          roleFilter = { role: roleKey, day: d };
+        }
+        render();
+      };
+      grid.appendChild(cell);
+    }
+  }
+  container.appendChild(grid);
+}
+
+function formatShort(iso) {
+  const d = new Date(iso + 'T12:00:00');
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
 function archiveStripe(key, arts) {
